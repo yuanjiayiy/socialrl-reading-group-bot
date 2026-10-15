@@ -318,7 +318,8 @@ def pick(cands: list[dict], liked: list[str], disliked: list[str], focus: str) -
               "Pick the single candidate this group would most enjoy discussing: a substantive, interesting idea "
               "close to their interests, not a survey or a minor benchmark tweak. Reply with only JSON: {\"pick\": index}")
     try:
-        i = json.loads(re.search(r"\{.*\}", ask(PICK_MODEL, prompt, 50), re.S).group(0))["pick"]
+        # Sonnet 5.5 thinks by default and thinking counts toward max_tokens, so a small cap leaves no text.
+        i = json.loads(re.search(r"\{.*\}", ask(PICK_MODEL, prompt, 4000), re.S).group(0))["pick"]
         if isinstance(i, int) and 0 <= i < len(pool):
             return pool[i]
     except Exception as e:
