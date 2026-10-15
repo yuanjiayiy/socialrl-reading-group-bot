@@ -1,1 +1,12 @@
-{}
+{
+ "collapse_sig": null,
+ "force_daily": false,
+ "last_daily": null,
+ "last_seen_ts": "1792094859.176663",
+ "lookup": {},
+ "negatives": {},
+ "positives": {},
+ "recs": {},
+ "seed_cache": {},
+ "sent": {}
+}
