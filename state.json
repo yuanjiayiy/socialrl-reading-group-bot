@@ -2,7 +2,7 @@
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
  "last_daily": "2026-10-15",
- "last_seen_ts": "1792100490.676809",
+ "last_seen_ts": "1792103472.073759",
  "lookup": {
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
   "2510.25224": "6e9fda45cd03d3aa732b327e492c58b31704f9d6",
@@ -68,7 +68,13 @@
   "why language models hallucinate": "0b82eec3b92215b910c19102c33bcd13aa6f8bd0"
  },
  "negatives": {},
- "positives": {},
+ "positives": {
+  "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
+   "added": "2026-10-15T15:38:13.814299-07:00",
+   "source": "shared",
+   "title": "Harness Learning Enables Generalizable Test-Time Adaptation"
+  }
+ },
  "recs": {
   "1792100490.676809": {
    "feedback": null,
@@ -79,6 +85,7 @@
   "1792103472.073759": {
    "feedback": null,
    "paperId": "e8cc23cd882f0bd5c16ba85742a459134ae33b73",
+   "proposed": true,
    "title": "Harness Learning Enables Generalizable Test-Time Adaptation",
    "url": "https://arxiv.org/abs/2609.35738"
   }
