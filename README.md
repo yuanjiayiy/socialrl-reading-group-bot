@@ -72,5 +72,5 @@ To change when the daily pick is posted, edit the first `cron` line in `.github/
 - Columns are found by their header names. Adding a new member column after *Total*, or reordering columns, is fine. Renaming the *Paper*, *Description*, *Who proposed* or *Date Added* headers is not.
 - The bot manages the row groups on the *Paper Voting* tab. If you add your own groups there, it will replace them.
 - Some sites, OpenReview especially, block automated reads. When that happens the bot asks for the title: `@paperbot add <link> title: <title>`.
-- A free Semantic Scholar API key (https://www.semanticscholar.org/product/api#api-key-form) makes the recommendations more reliable. The shared pool is often rate-limited.
+- Get a free Semantic Scholar API key (https://www.semanticscholar.org/product/api#api-key-form) and store it as the `S2_API_KEY` secret: `gh secret set S2_API_KEY`. Without one, the shared pool is usually rate-limited, so recommendations rarely work. When Semantic Scholar refuses requests, the bot skips it for that run and tries the daily pick again 30 minutes later. A warning shows on the run in the Actions tab.
 - State (what's been recommended, reactions, lookups) lives in `state.json`, which the workflow commits back to the repo.

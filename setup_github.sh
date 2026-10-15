@@ -50,8 +50,13 @@ while true; do
 done
 gh secret set GOOGLE_SERVICE_ACCOUNT_JSON -R "$REPO" < "$KEYFILE"
 EMAIL="$(grep -o '"client_email": *"[^"]*"' "$KEYFILE" | sed 's/.*"\([^"]*\)"$/\1/')"
-read -r -p "Semantic Scholar API key? (y/N) " yn
-[[ "$yn" =~ ^[Yy] ]] && gh secret set S2_API_KEY -R "$REPO"
+if [ -n "${S2_API_KEY:-}" ]; then
+  printf %s "$S2_API_KEY" | gh secret set S2_API_KEY -R "$REPO" && echo "S2_API_KEY: using the one in your environment"
+else
+  echo "Without a Semantic Scholar API key, recommendations often fail: the shared pool is usually rate-limited."
+  read -r -p "Semantic Scholar API key? (Y/n) " yn
+  [[ "$yn" =~ ^[Nn] ]] || gh secret set S2_API_KEY -R "$REPO"
+fi
 read -r -p "Optional one-line group focus (Enter to skip): " focus
 [ -n "$focus" ] && gh variable set GROUP_FOCUS -R "$REPO" --body "$focus"
 

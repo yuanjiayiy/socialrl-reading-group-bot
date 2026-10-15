@@ -89,22 +89,36 @@ def norm_title(t: str) -> str:
 
 # ------------------------------------------------------------- Semantic Scholar
 
+_s2_down = False
+
+
+def s2_unavailable() -> bool:
+    """True once Semantic Scholar has kept refusing requests this run. Later calls then return None at once."""
+    return _s2_down
+
+
 def s2(method: str, path: str, **kw) -> requests.Response | None:
+    global _s2_down
+    if _s2_down:
+        return None
     headers = dict(UA)
     if S2_KEY:
         headers["x-api-key"] = S2_KEY
-    r = None
-    for attempt in range(7):
-        try:
-            r = requests.request(method, S2 + path, headers=headers, timeout=60, **kw)
-        except requests.RequestException:
+    attempts = 4
+    for attempt in range(attempts):
+        if attempt:
             time.sleep(2 ** attempt)
+        try:
+            r = requests.request(method, S2 + path, headers=headers, timeout=30, **kw)
+        except requests.RequestException:
             continue
-        if r.status_code in (429, 500, 502, 503, 504):
-            time.sleep(min(2 ** attempt + 1, 60))
-            continue
-        return r
-    print(f"[s2] giving up on {path}", file=sys.stderr)
+        if r.status_code not in (429, 500, 502, 503, 504):
+            return r
+    # Without this, a rate-limited run spends minutes per paper and hits the job timeout.
+    _s2_down = True
+    print(f"[s2] giving up on {path}; skipping Semantic Scholar for the rest of this run", file=sys.stderr)
+    print("::warning::Semantic Scholar is rate-limiting the bot, so lookups and the daily pick were skipped "
+          "and will be retried next run." + ("" if S2_KEY else " Add an S2_API_KEY secret to fix this."))
     return None
 
 

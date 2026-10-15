@@ -259,6 +259,8 @@ def handle(msg: dict, slack: Slack, sheets: Sheets, s: dict) -> None:
                 if rec and rec.get("paperId"):
                     steer(s, rec, pol, "slack")
                     replies.append(f"{'👍 More' if pol == 'pos' else '👎 Less'} like *{rec['title']}*")
+                elif P.s2_unavailable():
+                    replies.append(f"⏳ Semantic Scholar isn't responding right now, so I couldn't look up {t}. Try again later.")
                 else:
                     replies.append(f"❓ Couldn't find {t} on Semantic Scholar")
             reply = "\n".join(replies)
@@ -342,6 +344,8 @@ def seeds(s: dict) -> None:
             continue
         neg = line.startswith("-")
         rec = P.resolve(line.lstrip("- ").strip(), allow_any_url=True)
+        if P.s2_unavailable():  # a failed lookup, not "no such paper": retry next run
+            return
         s["seed_cache"][line] = rec.get("paperId") if rec else None
         if rec:
             steer(s, rec, "neg" if neg else "pos", "seeds.txt")
@@ -360,13 +364,15 @@ def sheet_positives(sheets: Sheets, s: dict) -> tuple[dict[str, tuple[str, str]]
         if not key:
             continue
         if key not in s["lookup"]:
-            if budget <= 0:
+            if budget <= 0 or P.s2_unavailable():
                 continue
             budget -= 1
             q = f"arXiv:{p['arxiv']}" if p.get("arxiv") else (p.get("url") or p["title"])
             rec = P.resolve(q) if (p.get("arxiv") or p.get("url")) else P.resolve(p["title"])
             if rec is None and p["title"] and not p.get("arxiv"):
                 rec = P.resolve(p["title"])
+            if P.s2_unavailable():  # a failed lookup, not "no such paper": retry next run
+                continue
             s["lookup"][key] = rec.get("paperId") if rec else None
         pid = s["lookup"][key]
         if pid:
@@ -374,8 +380,11 @@ def sheet_positives(sheets: Sheets, s: dict) -> tuple[dict[str, tuple[str, str]]
     return out, arxivs, titles
 
 
-def daily(slack: Slack, sheets: Sheets, s: dict) -> None:
+def daily(slack: Slack, sheets: Sheets, s: dict) -> bool:
+    """Post the paper of the day. False means Semantic Scholar was unavailable and nothing was posted."""
     from_sheet, sheet_arxiv, sheet_titles = sheet_positives(sheets, s)
+    if P.s2_unavailable():
+        return False
     pos = {pid: (t, d) for pid, (t, d) in from_sheet.items()}
     for pid, e in s["positives"].items():
         pos[pid] = (e["title"], e.get("added", "")[:10])
@@ -383,19 +392,25 @@ def daily(slack: Slack, sheets: Sheets, s: dict) -> None:
         pos.pop(pid, None)
     if not pos:
         slack.post("I don't have any papers to learn from yet. Share a paper link here or add some to seeds.txt.")
-        return
+        return True
     ranked = sorted(pos.items(), key=lambda kv: kv[1][1], reverse=True)
     pos_ids = [pid for pid, _ in ranked[:MAX_POSITIVES]]
     neg_ids = list(s["negatives"])[:MAX_POSITIVES]
 
     seen = set(s["sent"]) | set(pos) | set(s["negatives"])
     sent_titles = {P.norm_title(v["title"]) for v in s["sent"].values()}
-    cands = [c for c in P.recommendations(pos_ids, neg_ids)
+    try:
+        recommended = P.recommendations(pos_ids, neg_ids)
+    except RuntimeError:
+        if P.s2_unavailable():
+            return False
+        raise
+    cands = [c for c in recommended
              if c["paperId"] not in seen and c.get("arxiv") not in sheet_arxiv
              and P.norm_title(c["title"]) not in sheet_titles | sent_titles]
     if not cands:
         slack.post("I couldn't find a new paper today. 👍 a few more papers to give me more to go on.")
-        return
+        return True
     rec = P.pick(cands, [t for _, (t, _) in ranked], [e["title"] for e in s["negatives"].values()], FOCUS)
     summary = P.summary20(rec)
     authors = ", ".join(rec["authors"][:4]) + (" et al." if len(rec["authors"]) > 4 else "")
@@ -410,6 +425,7 @@ def daily(slack: Slack, sheets: Sheets, s: dict) -> None:
     s["sent"][rec["paperId"]] = {"title": rec["title"], "date": today().isoformat()}
     s["recs"][ts] = {"paperId": rec["paperId"], "title": rec["title"], "url": rec["url"], "feedback": None}
     print(f"[daily] {rec['title']}")
+    return True
 
 
 # ------------------------------------------------------------------ main
@@ -426,10 +442,13 @@ def main() -> None:
         save_state(s)
         due = mode == "daily" and s["last_daily"] != today().isoformat()
         if due or s["force_daily"] or "--force" in sys.argv:
-            daily(slack, sheets, s)
-            s["force_daily"] = False
-            if due:
-                s["last_daily"] = today().isoformat()
+            if daily(slack, sheets, s):
+                s["force_daily"] = False
+                if due:
+                    s["last_daily"] = today().isoformat()
+            else:
+                print("[daily] Semantic Scholar unavailable; will try again next run", file=sys.stderr)
+                s["force_daily"] = True
             save_state(s)
         s["collapse_sig"] = sheets.collapse_old(COLLAPSE_AFTER_DAYS, today(), COLLAPSE_UNDATED, s["collapse_sig"])
     finally:
