@@ -1,0 +1,20 @@
+display_information:
+  name: Paper Bot
+  description: Tracks shared papers in the voting sheet and recommends one a day
+  background_color: "#1f2937"
+features:
+  bot_user:
+    display_name: paperbot
+    always_online: false
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+      - channels:history
+      - groups:history
+      - reactions:read
+      - users:read
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

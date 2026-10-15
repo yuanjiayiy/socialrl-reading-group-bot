@@ -1,0 +1,62 @@
+name: paper-bot
+
+on:
+  schedule:
+    - cron: "0 16 * * *"      # daily pick: 16:00 UTC = 9am Seattle (PDT) / 8am (PST)
+    - cron: "7,37 * * * *"    # every 30 min: new papers, commands, reactions, collapsing
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "sync | daily | force (post a recommendation now)"
+        default: "sync"
+
+permissions:
+  contents: write             # commit state.json back
+
+concurrency:
+  group: paper-bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Run bot
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+          SPREADSHEET_ID: ${{ vars.SPREADSHEET_ID || '15nOrrRpz6f7ChNmNPMNRtV6D5pJ8APCf_c5hC1vxWuQ' }}
+          VOTING_GID: ${{ vars.VOTING_GID || '1149238197' }}
+          READ_GID: ${{ vars.READ_GID || '575211331' }}
+          TIMEZONE: ${{ vars.TIMEZONE || 'America/Los_Angeles' }}
+          COLLAPSE_AFTER_DAYS: ${{ vars.COLLAPSE_AFTER_DAYS || '28' }}
+          COLLAPSE_UNDATED: ${{ vars.COLLAPSE_UNDATED || 'false' }}
+          GROUP_FOCUS: ${{ vars.GROUP_FOCUS }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            case "${{ inputs.mode }}" in
+              force) python bot.py daily --force ;;
+              *)     python bot.py "${{ inputs.mode }}" ;;
+            esac
+          elif [ "${{ github.event.schedule }}" = "0 16 * * *" ]; then
+            python bot.py daily
+          else
+            python bot.py sync
+          fi
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "paper-bot"
+          git config user.email "paper-bot@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || (git commit -m "paper-bot: update state" && git pull --rebase -q && git push)

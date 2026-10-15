@@ -1,0 +1,5 @@
+# Extra papers to steer the daily recommendation (one per line).
+# Every paper already on the "Paper Voting" and "Already read" tabs is used automatically,
+# so put things here only if they aren't in the sheet.
+# Any of: arXiv link or id, DOI, Semantic Scholar link, or a paper title.
+# Start a line with "-" for "less like this".
