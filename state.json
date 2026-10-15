@@ -2,7 +2,7 @@
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
  "last_daily": "2026-10-15",
- "last_seen_ts": "1792103472.073759",
+ "last_seen_ts": "1792105559.270389",
  "lookup": {
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
   "2510.25224": "6e9fda45cd03d3aa732b327e492c58b31704f9d6",
@@ -69,6 +69,16 @@
  },
  "negatives": {},
  "positives": {
+  "13a10f229219d951c36725cb10385730167b601f": {
+   "added": "2026-10-15T16:38:49.766635-07:00",
+   "source": "shared",
+   "title": "Scaling Discovery Requires Forgetting"
+  },
+  "800f766c45b8b529a70f5d05dcc6871eeda26cdb": {
+   "added": "2026-10-15T16:38:47.854336-07:00",
+   "source": "shared",
+   "title": "Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents"
+  },
   "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
    "added": "2026-10-15T15:38:13.814299-07:00",
    "source": "shared",
