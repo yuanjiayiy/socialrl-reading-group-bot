@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
- "last_daily": "2026-10-17",
+ "last_daily": "2026-10-18",
  "last_seen_ts": "1792260200.799699",
  "lookup": {
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -113,6 +113,12 @@
    "paperId": "93793a4dc01dfc67b76b2ece03d4e06648631ffd",
    "title": "EAU: Environment-Agent-User Co-evolution for Training User-Centric Agents",
    "url": "https://arxiv.org/abs/2610.16523"
+  },
+  "1792347778.159399": {
+   "feedback": null,
+   "paperId": "d8cbe50004fa5f711269d0c67de0fa926e78723a",
+   "title": "SIPO: Unifying Reinforcement Learning with On-Policy Self-Distillation",
+   "url": "https://arxiv.org/abs/2609.36742"
   }
  },
  "seed_cache": {},
@@ -128,6 +134,10 @@
   "c087faadad41a881e8f87ef10249b9f66ff7566b": {
    "date": "2026-10-16",
    "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL"
+  },
+  "d8cbe50004fa5f711269d0c67de0fa926e78723a": {
+   "date": "2026-10-18",
+   "title": "SIPO: Unifying Reinforcement Learning with On-Policy Self-Distillation"
   },
   "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
    "date": "2026-10-15",
