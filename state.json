@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
- "last_daily": "2026-10-18",
+ "last_daily": "2026-10-19",
  "last_seen_ts": "1792347778.159399",
  "lookup": {
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -119,6 +119,12 @@
    "paperId": "d8cbe50004fa5f711269d0c67de0fa926e78723a",
    "title": "SIPO: Unifying Reinforcement Learning with On-Policy Self-Distillation",
    "url": "https://arxiv.org/abs/2609.36742"
+  },
+  "1792442921.593559": {
+   "feedback": null,
+   "paperId": "5ee15c1568740433334dda8d0371bea8285d8fd3",
+   "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents",
+   "url": "https://arxiv.org/abs/2610.08993"
   }
  },
  "seed_cache": {},
@@ -126,6 +132,10 @@
   "414d2dd730575c18d98150a84fdb64655b6a0110": {
    "date": "2026-10-15",
    "title": "CAST: Critique-Aware Supervision for Training Reliable Long-Horizon Tool-Calling Agents"
+  },
+  "5ee15c1568740433334dda8d0371bea8285d8fd3": {
+   "date": "2026-10-19",
+   "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents"
   },
   "93793a4dc01dfc67b76b2ece03d4e06648631ffd": {
    "date": "2026-10-17",
