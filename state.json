@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
- "last_daily": "2026-10-19",
+ "last_daily": "2026-10-20",
  "last_seen_ts": "1792445532.247109",
  "lookup": {
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -125,6 +125,12 @@
    "paperId": "5ee15c1568740433334dda8d0371bea8285d8fd3",
    "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents",
    "url": "https://arxiv.org/abs/2610.08993"
+  },
+  "1792525539.853589": {
+   "feedback": null,
+   "paperId": "ad4e73a612e1d0ada569dbca06c51332fb8803ec",
+   "title": "Language Models Learn to Improve Language Models",
+   "url": "https://arxiv.org/abs/2610.23344"
   }
  },
  "seed_cache": {},
@@ -140,6 +146,10 @@
   "93793a4dc01dfc67b76b2ece03d4e06648631ffd": {
    "date": "2026-10-17",
    "title": "EAU: Environment-Agent-User Co-evolution for Training User-Centric Agents"
+  },
+  "ad4e73a612e1d0ada569dbca06c51332fb8803ec": {
+   "date": "2026-10-20",
+   "title": "Language Models Learn to Improve Language Models"
   },
   "c087faadad41a881e8f87ef10249b9f66ff7566b": {
    "date": "2026-10-16",
