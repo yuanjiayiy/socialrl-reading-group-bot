@@ -1,9 +1,10 @@
 {
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
- "last_daily": "2026-10-20",
- "last_seen_ts": "1792525539.853589",
+ "last_daily": "2026-10-21",
+ "last_seen_ts": "1792609948.489649",
  "lookup": {
+  "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
   "2510.25224": "6e9fda45cd03d3aa732b327e492c58b31704f9d6",
   "2512.18552": "5904da1e73c4c093e4d4e580782d01cb332a89c5",
@@ -77,6 +78,11 @@
    "source": "shared",
    "title": "Scaling Discovery Requires Forgetting"
   },
+  "66de49b3dcbbf0cca535335d597f94b702e2b95a": {
+   "added": "2026-10-21T12:47:36.108103-07:00",
+   "source": "shared",
+   "title": "The Platonic Representation Hypothesis"
+  },
   "800f766c45b8b529a70f5d05dcc6871eeda26cdb": {
    "added": "2026-10-15T16:38:47.854336-07:00",
    "source": "shared",
@@ -131,6 +137,12 @@
    "paperId": "ad4e73a612e1d0ada569dbca06c51332fb8803ec",
    "title": "Language Models Learn to Improve Language Models",
    "url": "https://arxiv.org/abs/2610.23344"
+  },
+  "1792612068.691599": {
+   "feedback": null,
+   "paperId": "7ea00fe69b7c77a3ad6bda017bdecfa2cd036227",
+   "title": "Compositional RL: Evaluating and Training LLMs for Collaborative Reasoning",
+   "url": "https://arxiv.org/abs/2610.17456"
   }
  },
  "seed_cache": {},
@@ -142,6 +154,10 @@
   "5ee15c1568740433334dda8d0371bea8285d8fd3": {
    "date": "2026-10-19",
    "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents"
+  },
+  "7ea00fe69b7c77a3ad6bda017bdecfa2cd036227": {
+   "date": "2026-10-21",
+   "title": "Compositional RL: Evaluating and Training LLMs for Collaborative Reasoning"
   },
   "93793a4dc01dfc67b76b2ece03d4e06648631ffd": {
    "date": "2026-10-17",
