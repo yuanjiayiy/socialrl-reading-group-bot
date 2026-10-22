@@ -43,6 +43,7 @@ jobs:
           COLLAPSE_UNDATED: ${{ vars.COLLAPSE_UNDATED || 'false' }}
           GROUP_FOCUS: ${{ vars.GROUP_FOCUS }}
           MAX_AGE_DAYS: ${{ vars.MAX_AGE_DAYS || '0' }}
+          SEED_WINDOW_DAYS: ${{ vars.SEED_WINDOW_DAYS || '183' }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             case "${{ inputs.mode }}" in

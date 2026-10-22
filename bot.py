@@ -41,6 +41,7 @@ COLLAPSE_AFTER_DAYS = int(os.environ.get("COLLAPSE_AFTER_DAYS", "28"))
 COLLAPSE_UNDATED = os.environ.get("COLLAPSE_UNDATED", "false").lower() == "true"
 FOCUS = os.environ.get("GROUP_FOCUS", "").strip()
 MAX_POSITIVES = 100
+SEED_WINDOW_DAYS = int(os.environ.get("SEED_WINDOW_DAYS", "183"))  # only papers added this recently steer picks
 FEEDBACK_DAYS = 14
 NEW_LOOKUPS_PER_RUN = 40  # Semantic Scholar lookups for sheet rows, to keep runs short
 
@@ -391,10 +392,13 @@ def daily(slack: Slack, sheets: Sheets, s: dict) -> bool:
         pos[pid] = (e["title"], e.get("added", "")[:10])
     for pid in s["negatives"]:
         pos.pop(pid, None)
-    if not pos:
-        slack.post("I don't have any papers to learn from yet. Share a paper link here or add some to seeds.txt.")
+    cutoff = (today() - dt.timedelta(days=SEED_WINDOW_DAYS)).isoformat()
+    steering = {pid: v for pid, v in pos.items() if v[1] >= cutoff}  # undated rows ("") drop out
+    if not steering:
+        slack.post(f"No papers were added in the last {SEED_WINDOW_DAYS} days, so I have nothing to learn from. "
+                   "Share a paper link here or add some to seeds.txt.")
         return True
-    ranked = sorted(pos.items(), key=lambda kv: kv[1][1], reverse=True)
+    ranked = sorted(steering.items(), key=lambda kv: kv[1][1], reverse=True)
     pos_ids = [pid for pid, _ in ranked[:MAX_POSITIVES]]
     neg_ids = [pid for pid, _ in sorted(s["negatives"].items(), key=lambda kv: kv[1].get("added", ""),
                                         reverse=True)[:MAX_POSITIVES]]

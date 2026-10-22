@@ -62,6 +62,7 @@ These are optional. Set them in the repo under *Settings → Secrets and variabl
 | `COLLAPSE_UNDATED` | `false` | Also collapse rows with an empty Date Added (most of the older rows) |
 | `GROUP_FOCUS` | — | One line about the group's interests, used when picking the daily paper |
 | `MAX_AGE_DAYS` | `0` | Only recommend papers published in the last N days (0 = no limit) |
+| `SEED_WINDOW_DAYS` | `183` | Only papers added to the sheet (or shared/👍'd) in the last N days steer recommendations; older ones are still never re-recommended |
 | `TIMEZONE` | `America/Los_Angeles` | For "date added" / "date read" |
 | `SPREADSHEET_ID`, `VOTING_GID`, `READ_GID` | your sheet | If you ever move to a different sheet |
 
