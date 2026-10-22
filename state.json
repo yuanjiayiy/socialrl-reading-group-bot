@@ -149,6 +149,12 @@
    "paperId": "76dd1d57a6c0412694b7ea6d071a83cb5cf0724c",
    "title": "Mental-Models for Multi-Agent Systems",
    "url": "https://arxiv.org/abs/2610.12453"
+  },
+  "1792709743.014259": {
+   "feedback": null,
+   "paperId": "9d9188d723751f13f86cf701d2e5551f0f73793c",
+   "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning",
+   "url": "https://arxiv.org/abs/2608.23493"
   }
  },
  "seed_cache": {},
@@ -172,6 +178,10 @@
   "93793a4dc01dfc67b76b2ece03d4e06648631ffd": {
    "date": "2026-10-17",
    "title": "EAU: Environment-Agent-User Co-evolution for Training User-Centric Agents"
+  },
+  "9d9188d723751f13f86cf701d2e5551f0f73793c": {
+   "date": "2026-10-22",
+   "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning"
   },
   "ad4e73a612e1d0ada569dbca06c51332fb8803ec": {
    "date": "2026-10-20",
