@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
- "last_daily": "2026-10-21",
+ "last_daily": "2026-10-22",
  "last_seen_ts": "1792691102.007169",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -143,6 +143,12 @@
    "paperId": "7ea00fe69b7c77a3ad6bda017bdecfa2cd036227",
    "title": "Compositional RL: Evaluating and Training LLMs for Collaborative Reasoning",
    "url": "https://arxiv.org/abs/2610.17456"
+  },
+  "1792697936.074599": {
+   "feedback": null,
+   "paperId": "76dd1d57a6c0412694b7ea6d071a83cb5cf0724c",
+   "title": "Mental-Models for Multi-Agent Systems",
+   "url": "https://arxiv.org/abs/2610.12453"
   }
  },
  "seed_cache": {},
@@ -154,6 +160,10 @@
   "5ee15c1568740433334dda8d0371bea8285d8fd3": {
    "date": "2026-10-19",
    "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents"
+  },
+  "76dd1d57a6c0412694b7ea6d071a83cb5cf0724c": {
+   "date": "2026-10-22",
+   "title": "Mental-Models for Multi-Agent Systems"
   },
   "7ea00fe69b7c77a3ad6bda017bdecfa2cd036227": {
    "date": "2026-10-21",
