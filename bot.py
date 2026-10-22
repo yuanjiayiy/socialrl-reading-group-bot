@@ -400,6 +400,7 @@ def daily(slack: Slack, sheets: Sheets, s: dict) -> bool:
         return True
     ranked = sorted(steering.items(), key=lambda kv: kv[1][1], reverse=True)
     pos_ids = [pid for pid, _ in ranked[:MAX_POSITIVES]]
+    print(f"[daily] {len(steering)} of {len(pos)} papers were added in the last {SEED_WINDOW_DAYS} days and steer the pick")
     neg_ids = [pid for pid, _ in sorted(s["negatives"].items(), key=lambda kv: kv[1].get("added", ""),
                                         reverse=True)[:MAX_POSITIVES]]
 
