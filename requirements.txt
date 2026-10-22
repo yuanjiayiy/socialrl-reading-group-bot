@@ -3,3 +3,4 @@ slack_sdk>=3.27
 requests>=2.31
 gspread>=6.0
 google-auth>=2.20
+pypdf>=4.0

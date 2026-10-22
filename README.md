@@ -9,7 +9,7 @@ A Slack bot for the reading group that keeps the "Group meeting schedule - Socia
    - unticked vote checkboxes for everyone, with the Total formula copied from the row above
 
    It replies in the thread to confirm, or to say the paper is already on the sheet or was already read.
-2. **One recommendation a day**, with a 20-word summary. It learns from every paper on both tabs, plus `seeds.txt`, plus reactions:
+2. **One recommendation a day**, with a TL;DR, why it fits the group, and a method digest Claude writes from the full PDF (posted in a thread). Claude picks it from Semantic Scholar's suggestions, weighing citations relative to the paper's age. It learns from every paper on both tabs, plus `seeds.txt`, plus reactions:
    - 👍 means more like this
    - 👎 means less like this
    - ➕ adds the paper to the voting sheet
@@ -61,6 +61,7 @@ These are optional. Set them in the repo under *Settings → Secrets and variabl
 | `COLLAPSE_AFTER_DAYS` | `28` | Age at which rows get collapsed |
 | `COLLAPSE_UNDATED` | `false` | Also collapse rows with an empty Date Added (most of the older rows) |
 | `GROUP_FOCUS` | — | One line about the group's interests, used when picking the daily paper |
+| `MAX_AGE_DAYS` | `0` | Only recommend papers published in the last N days (0 = no limit) |
 | `TIMEZONE` | `America/Los_Angeles` | For "date added" / "date read" |
 | `SPREADSHEET_ID`, `VOTING_GID`, `READ_GID` | your sheet | If you ever move to a different sheet |
 

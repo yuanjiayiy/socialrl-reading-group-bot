@@ -20,7 +20,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,6 +42,7 @@ jobs:
           COLLAPSE_AFTER_DAYS: ${{ vars.COLLAPSE_AFTER_DAYS || '28' }}
           COLLAPSE_UNDATED: ${{ vars.COLLAPSE_UNDATED || 'false' }}
           GROUP_FOCUS: ${{ vars.GROUP_FOCUS }}
+          MAX_AGE_DAYS: ${{ vars.MAX_AGE_DAYS || '0' }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             case "${{ inputs.mode }}" in

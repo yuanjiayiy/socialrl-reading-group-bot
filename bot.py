@@ -5,8 +5,9 @@ Reading-group Slack bot.
 1. Someone shares a paper link in the channel -> it's added to 'Paper Voting'
    with title+link, a 20-word description, who proposed it, today's date, and
    empty vote checkboxes.
-2. Once a day it recommends one paper with a 20-word summary. 👍 / 👎 on that
-   post steer future picks; ➕ adds it to the voting sheet.
+2. Once a day it recommends one paper with a TL;DR and a method digest
+   Claude writes from the full PDF (in a thread). 👍 / 👎 on that post steer
+   future picks; ➕ adds it to the voting sheet.
 3. "@paperbot read <title or link>" moves a paper from 'Paper Voting' to
    'Already read'.
 4. Rows in 'Paper Voting' added more than 4 weeks ago are grouped and collapsed.
@@ -395,7 +396,8 @@ def daily(slack: Slack, sheets: Sheets, s: dict) -> bool:
         return True
     ranked = sorted(pos.items(), key=lambda kv: kv[1][1], reverse=True)
     pos_ids = [pid for pid, _ in ranked[:MAX_POSITIVES]]
-    neg_ids = list(s["negatives"])[:MAX_POSITIVES]
+    neg_ids = [pid for pid, _ in sorted(s["negatives"].items(), key=lambda kv: kv[1].get("added", ""),
+                                        reverse=True)[:MAX_POSITIVES]]
 
     seen = set(s["sent"]) | set(pos) | set(s["negatives"])
     sent_titles = {P.norm_title(v["title"]) for v in s["sent"].values()}
@@ -411,21 +413,53 @@ def daily(slack: Slack, sheets: Sheets, s: dict) -> bool:
     if not cands:
         slack.post("I couldn't find a new paper today. 👍 a few more papers to give me more to go on.")
         return True
-    rec = P.pick(cands, [t for _, (t, _) in ranked], [e["title"] for e in s["negatives"].values()], FOCUS)
-    summary = P.summary20(rec)
-    authors = ", ".join(rec["authors"][:4]) + (" et al." if len(rec["authors"]) > 4 else "")
-    meta = " · ".join(x for x in [authors, rec.get("venue"), str(rec.get("year") or "")] if x)
-    blocks = [
-        {"type": "section", "text": {"type": "mrkdwn",
-                                     "text": f"📄 *Paper of the day:* <{rec['url']}|{rec['title']}>\n{summary}"[:2900]}},
-        {"type": "context", "elements": [{"type": "mrkdwn", "text": (meta[:300] + "  |  " if meta else "") +
-                                          "👍 more like this · 👎 less · ➕ add to voting sheet"}]},
-    ]
-    ts = slack.post(f"Paper of the day: {rec['title']}", blocks=blocks)
+    liked = [t for _, (t, _) in ranked]
+    rec = P.pick(cands, liked, [e["title"] for e in s["negatives"].values()], FOCUS)
+    pdf = P.fetch_pdf(rec)
+    try:
+        d = P.write_digest(rec, pdf, liked, FOCUS)
+    except Exception as e:
+        if not pdf:
+            raise
+        print(f"[daily] PDF route failed ({e}); retrying with abstract", file=sys.stderr)
+        pdf = None
+        d = P.write_digest(rec, None, liked, FOCUS)
+    ts = post_pick(slack, rec, d, full_text=pdf is not None)
     s["sent"][rec["paperId"]] = {"title": rec["title"], "date": today().isoformat()}
     s["recs"][ts] = {"paperId": rec["paperId"], "title": rec["title"], "url": rec["url"], "feedback": None}
     print(f"[daily] {rec['title']}")
     return True
+
+
+def post_pick(slack: Slack, rec: dict, d: dict, full_text: bool) -> str:
+    links = []
+    if rec.get("arxiv"):
+        links += [f"<https://arxiv.org/abs/{rec['arxiv']}|arXiv>", f"<https://arxiv.org/pdf/{rec['arxiv']}|PDF>"]
+    elif rec.get("pdf_url"):
+        links.append(f"<{rec['pdf_url']}|PDF>")
+    links.append(f"<https://www.semanticscholar.org/paper/{rec['paperId']}|Semantic Scholar>")
+    authors = ", ".join(rec["authors"][:6]) + (" et al." if len(rec["authors"]) > 6 else "")
+    where = " · ".join(x for x in [rec.get("venue"), rec.get("publicationDate") or str(rec.get("year") or "")] if x)
+    blocks = [
+        {"type": "header", "text": {"type": "plain_text", "text": f"📄 {rec['title']}"[:150], "emoji": True}},
+        {"type": "context", "elements": [{"type": "mrkdwn",
+                                          "text": " · ".join(x for x in [authors, where, " · ".join(links)] if x)[:2900]}]},
+        {"type": "section", "text": {"type": "mrkdwn", "text": f"*TL;DR* {d['tldr']}"[:2900]}},
+    ]
+    if d["why"]:
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": f"*Why this group* {d['why']}"[:2900]}})
+    blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text":
+                   "🧵 Method digest in thread  ·  👍 more like this · 👎 less · ➕ add to voting sheet"}]})
+    ts = slack.post(f"Paper of the day: {rec['title']}", blocks=blocks)
+
+    body = d["digest"]
+    if not full_text:
+        body = "_⚠️ Couldn't get the full text, so this is based on the abstract only._\n\n" + body
+    parts = P.chunks(body)
+    for i in range(0, len(parts), 20):
+        slack.post("Method digest", blocks=[{"type": "section", "text": {"type": "mrkdwn", "text": c}}
+                                            for c in parts[i:i + 20]], thread_ts=ts)
+    return ts
 
 
 # ------------------------------------------------------------------ main

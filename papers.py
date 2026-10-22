@@ -1,7 +1,10 @@
-"""Finding papers: link parsing, Semantic Scholar / arXiv lookups, and Claude helpers."""
+"""Finding papers: link parsing, Semantic Scholar / arXiv lookups, PDFs, and Claude helpers."""
 from __future__ import annotations
 
+import base64
+import datetime as dt
 import html
+import io
 import json
 import os
 import re
@@ -14,11 +17,13 @@ from anthropic import Anthropic
 
 S2 = "https://api.semanticscholar.org"
 S2_KEY = os.environ.get("S2_API_KEY", "").strip()
-FIELDS = "paperId,title,abstract,authors,year,venue,publicationDate,externalIds,url"
+FIELDS = "paperId,title,abstract,authors,year,venue,publicationDate,externalIds,openAccessPdf,citationCount,url"
 UA = {"User-Agent": "reading-group-bot/1.0 (paper reading group)"}
 
 SUMMARY_MODEL = os.environ.get("SUMMARY_MODEL", "claude-haiku-4-5-20251001")
 PICK_MODEL = os.environ.get("PICK_MODEL", "claude-sonnet-5-5")
+DIGEST_MODEL = os.environ.get("DIGEST_MODEL", "claude-sonnet-5-5")
+MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "0"))  # 0 = no age filter
 
 # ----------------------------------------------------------------- link parsing
 
@@ -217,6 +222,9 @@ def to_record(p: dict | None, url: str | None = None) -> dict | None:
         "authors": [a.get("name", "") for a in (p.get("authors") or [])],
         "year": p.get("year"),
         "venue": p.get("venue") or "",
+        "publicationDate": p.get("publicationDate"),
+        "citationCount": p.get("citationCount"),
+        "pdf_url": (p.get("openAccessPdf") or {}).get("url"),
         "url": f"https://arxiv.org/abs/{arxiv}" if arxiv else (url or p.get("url") or ""),
     }
 
@@ -261,13 +269,23 @@ def recommendations(positive_ids: list[str], negative_ids: list[str]) -> list[di
     r = s2("POST", "/recommendations/v1/papers", params={"fields": FIELDS, "limit": 100},
            json={"positivePaperIds": positive_ids, "negativePaperIds": negative_ids})
     if r is None or r.status_code != 200:
-        raise RuntimeError(f"Semantic Scholar recommendations failed: {r and r.status_code} {r and r.text[:300]}")
+        detail = f"{r.status_code} {r.text[:300]}" if r is not None else "no response"
+        raise RuntimeError(f"Semantic Scholar recommendations failed: {detail}")
     out = []
     for p in r.json().get("recommendedPapers", []):
         rec = to_record(p)
-        if rec and len(rec["title"]) >= 15 and (rec["abstract"] or rec["arxiv"]):
-            out.append(rec)
+        if not rec or len(rec["title"]) < 15 or not (rec["abstract"] or has_pdf(rec)):
+            continue  # drop junk records
+        if MAX_AGE_DAYS and rec["publicationDate"]:
+            if (dt.date.today() - dt.date.fromisoformat(rec["publicationDate"])).days > MAX_AGE_DAYS:
+                continue
+        out.append(rec)
+    out.sort(key=lambda rec: not has_pdf(rec))  # stable: keep S2 order, PDFs first
     return out
+
+
+def has_pdf(rec: dict) -> bool:
+    return bool(rec.get("arxiv") or rec.get("pdf_url"))
 
 
 # ------------------------------------------------------------------- Claude
@@ -308,15 +326,24 @@ def pick(cands: list[dict], liked: list[str], disliked: list[str], focus: str) -
     pool = cands[:20]
     if len(pool) == 1:
         return pool[0]
-    listing = "\n\n".join(f"[{i}] {c['title']} ({c.get('year') or 'n.d.'})\n{(c.get('abstract') or '')[:800]}"
+
+    def about(c: dict) -> str:
+        cites = c.get("citationCount")
+        bits = [c.get("venue") or "preprint", c.get("publicationDate") or str(c.get("year") or "n.d."),
+                f"{cites} citations" if cites is not None else "citations unknown"]
+        return ", ".join(bits)
+    listing = "\n\n".join(f"[{i}] {c['title']} ({about(c)})\n{(c.get('abstract') or '(no abstract)')[:900]}"
                           for i, c in enumerate(pool))
-    prompt = ("You pick one paper a day for an ML research reading group.\n\n"
+    prompt = (f"You pick one paper a day for an ML research reading group. Today is {dt.date.today().isoformat()}.\n\n"
               "Papers the group has proposed, read, or liked:\n" + "\n".join(f"- {t}" for t in liked[:50]) +
               "\n\nPapers the group disliked:\n" + ("\n".join(f"- {t}" for t in disliked[:30]) or "(none)") +
               (f"\n\nGroup focus: {focus}" if focus else "") +
               f"\n\nCandidates:\n{listing}\n\n"
-              "Pick the single candidate this group would most enjoy discussing: a substantive, interesting idea "
-              "close to their interests, not a survey or a minor benchmark tweak. Reply with only JSON: {\"pick\": index}")
+              "Choose the candidate the group would most want to read in depth and discuss. Favor papers with a "
+              "substantive, transferable method over surveys, position papers, or incremental benchmark results. "
+              "Use citation count as a signal of impact, judged relative to the paper's age: a paper from the last "
+              "few months can't have many citations yet, so don't let an older, much-cited paper win on that alone. "
+              "Reply with only JSON: {\"pick\": index}")
     try:
         # Sonnet 5.5 thinks by default and thinking counts toward max_tokens, so a small cap leaves no text.
         i = json.loads(re.search(r"\{.*\}", ask(PICK_MODEL, prompt, 4000), re.S).group(0))["pick"]
@@ -325,3 +352,118 @@ def pick(cands: list[dict], liked: list[str], disliked: list[str], focus: str) -
     except Exception as e:
         print(f"[pick] falling back to first candidate: {e}", file=sys.stderr)
     return pool[0]
+
+
+# ------------------------------------------------------------------- digest
+
+def fetch_pdf(rec: dict) -> bytes | None:
+    urls = []
+    if rec.get("arxiv"):
+        urls.append(f"https://arxiv.org/pdf/{rec['arxiv']}")
+    if rec.get("pdf_url"):
+        urls.append(rec["pdf_url"])
+    for u in urls:
+        try:
+            r = requests.get(u, headers=UA, timeout=90)
+            if r.ok and r.content[:5] == b"%PDF-" and len(r.content) < 30_000_000:
+                return trim_pdf(r.content)
+        except requests.RequestException as e:
+            print(f"[pdf] {u}: {e}", file=sys.stderr)
+    return None
+
+
+def trim_pdf(data: bytes, max_pages: int = 90) -> bytes:
+    """Keep the PDF under the API's page limit (main text + early appendix)."""
+    try:
+        from pypdf import PdfReader, PdfWriter
+        reader = PdfReader(io.BytesIO(data))
+        if len(reader.pages) <= max_pages:
+            return data
+        w = PdfWriter()
+        for page in reader.pages[:max_pages]:
+            w.add_page(page)
+        buf = io.BytesIO()
+        w.write(buf)
+        return buf.getvalue()
+    except Exception:
+        return data
+
+
+DIGEST_INSTRUCTIONS = """You are a sharp research colleague writing a method-level digest for an ML reading group of \
+expert readers. They already know the field, so skip generic background. They want to understand HOW the method works \
+well enough to explain it to someone else or reimplement a toy version.
+
+Papers the group has proposed, read, or liked (use these to tailor the "why" and to name the closest prior work they know):
+{liked}
+{focus}
+Write exactly three tagged sections and nothing else:
+
+<tldr>2-3 sentences: the problem, the key idea, and the headline result with real numbers.</tldr>
+
+<why>1-2 sentences connecting this paper to specific papers from the group's list (name them). If the link is loose, say so.</why>
+
+<digest>
+Use these parts, each starting with a bold label on its own line:
+*Setup & problem* - the formal setting (inputs, outputs, assumptions) and the specific limitation of prior work being attacked.
+*Method* - the core mechanism step by step: architecture, objective, and/or algorithm. Write the key equations in plain text \
+(e.g. L = E_t[ ||eps - eps_theta(x_t, t)||^2 ]) and define every symbol. Say what happens at training time vs inference time, \
+and give rough cost/complexity if relevant.
+*What's actually new* - the precise delta vs the closest prior work (named). Separate the genuine idea from engineering.
+*Details that matter* - data, scale, hyperparameters, and tricks that the ablations show are load-bearing.
+*Evidence* - main experiments, strongest baselines, key numbers, and the single most informative ablation.
+*Caveats* - weaknesses, confounds, missing baselines, or claims you'd verify before trusting.
+*Try it* - the smallest experiment that would reproduce the core idea; code link if the paper gives one.
+</digest>
+
+Formatting rules (this is posted to Slack): use Slack mrkdwn only - *bold* with single asterisks, _italic_, \
+"•" for bullets, `code` for symbols/equations. No # headings, no tables, no LaTeX. Keep the digest around 500-900 words. \
+Never invent numbers or details; if the paper doesn't say, write "not reported"."""
+
+
+def write_digest(rec: dict, pdf: bytes | None, liked: list[str], focus: str) -> dict:
+    meta = (f"Title: {rec['title']}\nAuthors: {', '.join(rec['authors'][:12])}\n"
+            f"Venue/date: {rec.get('venue') or 'preprint'} {rec.get('publicationDate') or rec.get('year') or ''}\n")
+    instructions = DIGEST_INSTRUCTIONS.format(
+        liked="\n".join(f"- {t}" for t in liked[:40]) or "(none)",
+        focus=f"\nThe group's stated focus: {focus}\n" if focus else "")
+    content: list = []
+    if pdf:
+        content.append({"type": "document",
+                        "source": {"type": "base64", "media_type": "application/pdf",
+                                   "data": base64.standard_b64encode(pdf).decode()}})
+        content.append({"type": "text", "text": meta + "\nThe full paper is attached.\n\n" + instructions})
+    else:
+        content.append({"type": "text", "text": meta + f"\nAbstract (full text unavailable):\n{rec.get('abstract')}\n\n"
+                        + instructions + "\n\nOnly the abstract is available: be explicit about what you can't tell."})
+    # Thinking shares max_tokens with the answer, so leave plenty of room for a ~900-word digest.
+    msg = claude().messages.create(model=DIGEST_MODEL, max_tokens=16000, messages=[{"role": "user", "content": content}])
+    text = "".join(b.text for b in msg.content if b.type == "text")
+
+    def tag(name: str) -> str:
+        m = re.search(rf"<{name}>(.*?)</{name}>", text, re.S)
+        return to_mrkdwn(m.group(1).strip()) if m else ""
+    return {"tldr": tag("tldr"), "why": tag("why"), "digest": tag("digest") or to_mrkdwn(text)}
+
+
+def to_mrkdwn(t: str) -> str:
+    t = re.sub(r"\*\*(.+?)\*\*", r"*\1*", t)
+    t = re.sub(r"^#{1,6}\s*(.+)$", r"*\1*", t, flags=re.M)
+    t = re.sub(r"^\s*[-*]\s+", "• ", t, flags=re.M)
+    t = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r"<\2|\1>", t)
+    return t
+
+
+def chunks(text: str, limit: int = 2900) -> list[str]:
+    out, cur = [], ""
+    for para in text.split("\n\n"):
+        while len(para) > limit:
+            out.append(para[:limit])
+            para = para[limit:]
+        if len(cur) + len(para) + 2 > limit:
+            out.append(cur)
+            cur = para
+        else:
+            cur = f"{cur}\n\n{para}" if cur else para
+    if cur:
+        out.append(cur)
+    return [c for c in out if c.strip()]
