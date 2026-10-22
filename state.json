@@ -2,7 +2,7 @@
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
  "last_daily": "2026-10-22",
- "last_seen_ts": "1792697936.074599",
+ "last_seen_ts": "1792709743.014259",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -21,9 +21,12 @@
   "2605.16902": "23a3f53e98b4dc86ddc065243d5018932ea72b6f",
   "2605.30621": "c5c1607d44b3a08187367a1a77fee0effb8307db",
   "2608.03958": "c21f6e739c592f3db055febdd18b6743652c4a4b",
+  "2608.17253": "c087faadad41a881e8f87ef10249b9f66ff7566b",
   "2609.30063": "f56b4b610b07532c0484b6fb4234b850f396ccee",
   "2609.35738": "e8cc23cd882f0bd5c16ba85742a459134ae33b73",
   "2610.07447": "800f766c45b8b529a70f5d05dcc6871eeda26cdb",
+  "2610.08993": "5ee15c1568740433334dda8d0371bea8285d8fd3",
+  "2610.16523": "93793a4dc01dfc67b76b2ece03d4e06648631ffd",
   "2610.20563": "13a10f229219d951c36725cb10385730167b601f",
   "artificial generational intelligence cultural accumulation in reinforcement learning": "7c5f045a64dbc7340b842d89e1c2817c50676046",
   "biomnibench process level evaluation of llm agents for real world biomedical research biorxiv": "f374b9b3ea2f834ccb52485707398ebb5b497198",
@@ -71,12 +74,23 @@
   "who to imitate imitating desired behavior from diverse multi agent datasets": null,
   "why language models hallucinate": "0b82eec3b92215b910c19102c33bcd13aa6f8bd0"
  },
- "negatives": {},
+ "negatives": {
+  "9d9188d723751f13f86cf701d2e5551f0f73793c": {
+   "added": "2026-10-22T16:03:35.858303-07:00",
+   "source": "reaction",
+   "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning"
+  }
+ },
  "positives": {
   "13a10f229219d951c36725cb10385730167b601f": {
    "added": "2026-10-15T16:38:49.766635-07:00",
    "source": "shared",
    "title": "Scaling Discovery Requires Forgetting"
+  },
+  "5ee15c1568740433334dda8d0371bea8285d8fd3": {
+   "added": "2026-10-22T16:03:35.171086-07:00",
+   "source": "shared",
+   "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents"
   },
   "66de49b3dcbbf0cca535335d597f94b702e2b95a": {
    "added": "2026-10-21T12:47:36.108103-07:00",
@@ -87,6 +101,16 @@
    "added": "2026-10-15T16:38:47.854336-07:00",
    "source": "shared",
    "title": "Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents"
+  },
+  "93793a4dc01dfc67b76b2ece03d4e06648631ffd": {
+   "added": "2026-10-22T16:03:33.142824-07:00",
+   "source": "shared",
+   "title": "EAU: Environment-Agent-User Co-evolution for Training User-Centric Agents"
+  },
+  "c087faadad41a881e8f87ef10249b9f66ff7566b": {
+   "added": "2026-10-22T16:03:31.083632-07:00",
+   "source": "shared",
+   "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL"
   },
   "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
    "added": "2026-10-15T15:38:13.814299-07:00",
@@ -111,12 +135,14 @@
   "1792177733.428209": {
    "feedback": null,
    "paperId": "c087faadad41a881e8f87ef10249b9f66ff7566b",
+   "proposed": true,
    "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL",
    "url": "https://arxiv.org/abs/2608.17253"
   },
   "1792260200.799699": {
    "feedback": null,
    "paperId": "93793a4dc01dfc67b76b2ece03d4e06648631ffd",
+   "proposed": true,
    "title": "EAU: Environment-Agent-User Co-evolution for Training User-Centric Agents",
    "url": "https://arxiv.org/abs/2610.16523"
   },
@@ -129,6 +155,7 @@
   "1792442921.593559": {
    "feedback": null,
    "paperId": "5ee15c1568740433334dda8d0371bea8285d8fd3",
+   "proposed": true,
    "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents",
    "url": "https://arxiv.org/abs/2610.08993"
   },
@@ -151,10 +178,16 @@
    "url": "https://arxiv.org/abs/2610.12453"
   },
   "1792709743.014259": {
-   "feedback": null,
+   "feedback": "down",
    "paperId": "9d9188d723751f13f86cf701d2e5551f0f73793c",
    "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning",
    "url": "https://arxiv.org/abs/2608.23493"
+  },
+  "1792710285.760029": {
+   "feedback": null,
+   "paperId": "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9",
+   "title": "Self-Evolving Coding Agents via Harness-Policy Optimization",
+   "url": "https://arxiv.org/abs/2610.22791"
   }
  },
  "seed_cache": {},
@@ -166,6 +199,10 @@
   "5ee15c1568740433334dda8d0371bea8285d8fd3": {
    "date": "2026-10-19",
    "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents"
+  },
+  "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9": {
+   "date": "2026-10-22",
+   "title": "Self-Evolving Coding Agents via Harness-Policy Optimization"
   },
   "76dd1d57a6c0412694b7ea6d071a83cb5cf0724c": {
    "date": "2026-10-22",
