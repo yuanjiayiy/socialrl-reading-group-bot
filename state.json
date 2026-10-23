@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
- "last_daily": "2026-10-22",
+ "last_daily": "2026-10-23",
  "last_seen_ts": "1792712771.391989",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -28,6 +28,7 @@
   "2610.08993": "5ee15c1568740433334dda8d0371bea8285d8fd3",
   "2610.16523": "93793a4dc01dfc67b76b2ece03d4e06648631ffd",
   "2610.20563": "13a10f229219d951c36725cb10385730167b601f",
+  "2610.22791": "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9",
   "artificial generational intelligence cultural accumulation in reinforcement learning": "7c5f045a64dbc7340b842d89e1c2817c50676046",
   "biomnibench process level evaluation of llm agents for real world biomedical research biorxiv": "f374b9b3ea2f834ccb52485707398ebb5b497198",
   "blog post autodata an automatic data scientist to create high quality data": null,
@@ -194,6 +195,12 @@
    "proposed": true,
    "title": "Self-Evolving Coding Agents via Harness-Policy Optimization",
    "url": "https://arxiv.org/abs/2610.22791"
+  },
+  "1792784397.445069": {
+   "feedback": null,
+   "paperId": "841f443dac56670fa35476efb912a2f67709fafa",
+   "title": "LiteEvo: Automated, Cost-Efficient Harness Evolution for Generalization to Unseen Tasks",
+   "url": "https://arxiv.org/abs/2609.33146"
   }
  },
  "seed_cache": {},
@@ -217,6 +224,10 @@
   "7ea00fe69b7c77a3ad6bda017bdecfa2cd036227": {
    "date": "2026-10-21",
    "title": "Compositional RL: Evaluating and Training LLMs for Collaborative Reasoning"
+  },
+  "841f443dac56670fa35476efb912a2f67709fafa": {
+   "date": "2026-10-23",
+   "title": "LiteEvo: Automated, Cost-Efficient Harness Evolution for Generalization to Unseen Tasks"
   },
   "93793a4dc01dfc67b76b2ece03d4e06648631ffd": {
    "date": "2026-10-17",
