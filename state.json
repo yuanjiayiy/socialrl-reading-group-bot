@@ -2,7 +2,7 @@
  "collapse_sig": "[[18, 23]]",
  "force_daily": false,
  "last_daily": "2026-10-22",
- "last_seen_ts": "1792709743.014259",
+ "last_seen_ts": "1792712771.391989",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -97,6 +97,11 @@
    "source": "shared",
    "title": "The Platonic Representation Hypothesis"
   },
+  "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9": {
+   "added": "2026-10-22T18:23:36.027168-07:00",
+   "source": "shared",
+   "title": "Self-Evolving Coding Agents via Harness-Policy Optimization"
+  },
   "800f766c45b8b529a70f5d05dcc6871eeda26cdb": {
    "added": "2026-10-15T16:38:47.854336-07:00",
    "source": "shared",
@@ -184,8 +189,9 @@
    "url": "https://arxiv.org/abs/2608.23493"
   },
   "1792710285.760029": {
-   "feedback": null,
+   "feedback": "up",
    "paperId": "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9",
+   "proposed": true,
    "title": "Self-Evolving Coding Agents via Harness-Policy Optimization",
    "url": "https://arxiv.org/abs/2610.22791"
   }
