@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-10-23",
+ "last_daily": "2026-10-24",
  "last_seen_ts": "1792784397.445069",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -201,6 +201,12 @@
    "paperId": "841f443dac56670fa35476efb912a2f67709fafa",
    "title": "LiteEvo: Automated, Cost-Efficient Harness Evolution for Generalization to Unseen Tasks",
    "url": "https://arxiv.org/abs/2609.33146"
+  },
+  "1792866507.894279": {
+   "feedback": null,
+   "paperId": "6116dcf16c15992d5439b93a4fbec5db1224ecf1",
+   "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
+   "url": "https://arxiv.org/abs/2610.12176"
   }
  },
  "seed_cache": {},
@@ -212,6 +218,10 @@
   "5ee15c1568740433334dda8d0371bea8285d8fd3": {
    "date": "2026-10-19",
    "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents"
+  },
+  "6116dcf16c15992d5439b93a4fbec5db1224ecf1": {
+   "date": "2026-10-24",
+   "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision"
   },
   "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9": {
    "date": "2026-10-22",
