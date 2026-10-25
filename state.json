@@ -77,6 +77,11 @@
   "why language models hallucinate": "0b82eec3b92215b910c19102c33bcd13aa6f8bd0"
  },
  "negatives": {
+  "6fac819b95eb96e9bf74c44e8fe102e48b084d73": {
+   "added": "2026-10-25T15:00:10.661998-07:00",
+   "source": "reaction",
+   "title": "Harness^2: Recursive Agent Harnessing for an Open World"
+  },
   "9d9188d723751f13f86cf701d2e5551f0f73793c": {
    "added": "2026-10-22T16:03:35.858303-07:00",
    "source": "reaction",
@@ -216,7 +221,7 @@
    "url": "https://arxiv.org/abs/2610.12176"
   },
   "1792953536.787379": {
-   "feedback": null,
+   "feedback": "down",
    "paperId": "6fac819b95eb96e9bf74c44e8fe102e48b084d73",
    "title": "Harness^2: Recursive Agent Harnessing for an Open World",
    "url": "https://arxiv.org/abs/2610.14224"
