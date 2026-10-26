@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-10-25",
- "last_seen_ts": "1792953536.787379",
+ "last_daily": "2026-10-26",
+ "last_seen_ts": "1793044136.764079",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -11,6 +11,7 @@
   "2601.02780": "38bfb955426702f1bfc9888e52c9cd48b2f8757b",
   "2601.05808": "b5a37b51d38e693807518a1851457571dc1146b0",
   "2602.10090": "0b1afbe869c32bec95c348fb3c8f3004bdb14ee7",
+  "2603.01092": "65173ace48dec50cde10a5d532f8ed241751d7b5",
   "2603.09249": "85a381088fc61f02671ebf1db91c836aed132fa6",
   "2603.11245": "e3a1443a207e24fbe454a4685693dd46f812af9d",
   "2603.12228": "88ff568e1b663d2cdd438ac5c4a6616b8562786f",
@@ -103,6 +104,11 @@
    "added": "2026-10-25T11:38:03.796719-07:00",
    "source": "shared",
    "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision"
+  },
+  "65173ace48dec50cde10a5d532f8ed241751d7b5": {
+   "added": "2026-10-26T13:48:56.411005-07:00",
+   "source": "shared",
+   "title": "The Alien Space of Science: Sampling Coherent but Cognitively Unavailable Research Directions"
   },
   "66de49b3dcbbf0cca535335d597f94b702e2b95a": {
    "added": "2026-10-21T12:47:36.108103-07:00",
@@ -225,6 +231,12 @@
    "paperId": "6fac819b95eb96e9bf74c44e8fe102e48b084d73",
    "title": "Harness^2: Recursive Agent Harnessing for an Open World",
    "url": "https://arxiv.org/abs/2610.14224"
+  },
+  "1793047779.091009": {
+   "feedback": null,
+   "paperId": "91398e34244b35c5bd34461607ca67801241256f",
+   "title": "AgentDiscover: Autonomous Discovery with Minimal Search Scaffolding",
+   "url": "https://arxiv.org/abs/2610.05334"
   }
  },
  "seed_cache": {},
@@ -260,6 +272,10 @@
   "841f443dac56670fa35476efb912a2f67709fafa": {
    "date": "2026-10-23",
    "title": "LiteEvo: Automated, Cost-Efficient Harness Evolution for Generalization to Unseen Tasks"
+  },
+  "91398e34244b35c5bd34461607ca67801241256f": {
+   "date": "2026-10-26",
+   "title": "AgentDiscover: Autonomous Discovery with Minimal Search Scaffolding"
   },
   "93793a4dc01dfc67b76b2ece03d4e06648631ffd": {
    "date": "2026-10-17",
