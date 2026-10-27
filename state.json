@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-10-26",
- "last_seen_ts": "1793062733.870289",
+ "last_daily": "2026-10-27",
+ "last_seen_ts": "1793127481.841619",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -10,6 +10,7 @@
   "2512.18552": "5904da1e73c4c093e4d4e580782d01cb332a89c5",
   "2601.02780": "38bfb955426702f1bfc9888e52c9cd48b2f8757b",
   "2601.05808": "b5a37b51d38e693807518a1851457571dc1146b0",
+  "2602.01114": "fc5629a7d0b40b9256bf2a623a8473e6465254f4",
   "2602.10090": "0b1afbe869c32bec95c348fb3c8f3004bdb14ee7",
   "2603.01092": "65173ace48dec50cde10a5d532f8ed241751d7b5",
   "2603.09249": "85a381088fc61f02671ebf1db91c836aed132fa6",
@@ -25,6 +26,7 @@
   "2608.17253": "c087faadad41a881e8f87ef10249b9f66ff7566b",
   "2609.30063": "f56b4b610b07532c0484b6fb4234b850f396ccee",
   "2609.35738": "e8cc23cd882f0bd5c16ba85742a459134ae33b73",
+  "2609.37725": "c56830348b7b4d113df72a40bf82888a9bec4e2d",
   "2610.07447": "800f766c45b8b529a70f5d05dcc6871eeda26cdb",
   "2610.08993": "5ee15c1568740433334dda8d0371bea8285d8fd3",
   "2610.12176": "6116dcf16c15992d5439b93a4fbec5db1224ecf1",
@@ -65,6 +67,7 @@
   "political neutrality as balanced approval a large scale human evaluation of ai responses": "cf4e764e039a657df4fa630dbe49aa38e3e314b6",
   "recursive introspection teaching language model agents how to self improve": "bdc8c92a44714b468b40ef3d77e96d966f93141b",
   "rogers 88 does biology constrain culture": null,
+  "scaling discovery requires forgetting": "13a10f229219d951c36725cb10385730167b601f",
   "score centering stabilizes off policy reinforcement learning": "2a78bc6c94f49d1dca5af0a8a6e2b177fbcece28",
   "self distillation enables continual learning": "370a293b5dcf9d456ba7f805b5b0a3d8e984ff6e",
   "self distillation zero self revision turns binary rewards into dense supervision": "b72b08ccf321e8da60f5c97a60e8e99392b75146",
@@ -144,6 +147,11 @@
    "added": "2026-10-15T15:38:13.814299-07:00",
    "source": "shared",
    "title": "Harness Learning Enables Generalizable Test-Time Adaptation"
+  },
+  "fc5629a7d0b40b9256bf2a623a8473e6465254f4": {
+   "added": "2026-10-27T13:19:16.970962-07:00",
+   "source": "shared",
+   "title": "Bowling with ChatGPT: On the Evolving User Interactions with Conversational AI Systems"
   }
  },
  "recs": {
@@ -242,6 +250,12 @@
    "paperId": "91398e34244b35c5bd34461607ca67801241256f",
    "title": "AgentDiscover: Autonomous Discovery with Minimal Search Scaffolding",
    "url": "https://arxiv.org/abs/2610.05334"
+  },
+  "1793132431.243009": {
+   "feedback": null,
+   "paperId": "e27ae00aade4a6ed0c94b4a8c0ed169ae2006603",
+   "title": "FreeEvolve: Learning to Evolve Beyond Fixed Loops",
+   "url": "https://arxiv.org/abs/2610.09197"
   }
  },
  "seed_cache": {},
@@ -301,6 +315,10 @@
   "d8cbe50004fa5f711269d0c67de0fa926e78723a": {
    "date": "2026-10-18",
    "title": "SIPO: Unifying Reinforcement Learning with On-Policy Self-Distillation"
+  },
+  "e27ae00aade4a6ed0c94b4a8c0ed169ae2006603": {
+   "date": "2026-10-27",
+   "title": "FreeEvolve: Learning to Evolve Beyond Fixed Loops"
   },
   "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
    "date": "2026-10-15",
