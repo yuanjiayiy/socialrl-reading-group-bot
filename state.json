@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-10-27",
- "last_seen_ts": "1793216463.551509",
+ "last_daily": "2026-10-28",
+ "last_seen_ts": "1793219515.784599",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -256,10 +256,20 @@
    "paperId": "e27ae00aade4a6ed0c94b4a8c0ed169ae2006603",
    "title": "FreeEvolve: Learning to Evolve Beyond Fixed Loops",
    "url": "https://arxiv.org/abs/2610.09197"
+  },
+  "1793220153.715259": {
+   "feedback": null,
+   "paperId": "024e959e1c4d8d4730a3f92d405a2e787a7b8181",
+   "title": "Scaling Inference-Time Compute with Teams of Coding Agents",
+   "url": "https://arxiv.org/abs/2610.17471"
   }
  },
  "seed_cache": {},
  "sent": {
+  "024e959e1c4d8d4730a3f92d405a2e787a7b8181": {
+   "date": "2026-10-28",
+   "title": "Scaling Inference-Time Compute with Teams of Coding Agents"
+  },
   "414d2dd730575c18d98150a84fdb64655b6a0110": {
    "date": "2026-10-15",
    "title": "CAST: Critique-Aware Supervision for Training Reliable Long-Horizon Tool-Calling Agents"
