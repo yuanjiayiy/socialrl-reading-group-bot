@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-10-28",
+ "last_daily": "2026-10-29",
  "last_seen_ts": "1793295901.865669",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -262,6 +262,12 @@
    "paperId": "024e959e1c4d8d4730a3f92d405a2e787a7b8181",
    "title": "Scaling Inference-Time Compute with Teams of Coding Agents",
    "url": "https://arxiv.org/abs/2610.17471"
+  },
+  "1793306746.628899": {
+   "feedback": null,
+   "paperId": "189d26f30a4d3957d358f13ccc026bd2bf340164",
+   "title": "CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2610.36469"
   }
  },
  "seed_cache": {},
@@ -269,6 +275,10 @@
   "024e959e1c4d8d4730a3f92d405a2e787a7b8181": {
    "date": "2026-10-28",
    "title": "Scaling Inference-Time Compute with Teams of Coding Agents"
+  },
+  "189d26f30a4d3957d358f13ccc026bd2bf340164": {
+   "date": "2026-10-29",
+   "title": "CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning"
   },
   "414d2dd730575c18d98150a84fdb64655b6a0110": {
    "date": "2026-10-15",
