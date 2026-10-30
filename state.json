@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-10-29",
+ "last_daily": "2026-10-30",
  "last_seen_ts": "1793306746.628899",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -268,6 +268,12 @@
    "paperId": "189d26f30a4d3957d358f13ccc026bd2bf340164",
    "title": "CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning",
    "url": "https://arxiv.org/abs/2610.36469"
+  },
+  "1793391458.141659": {
+   "feedback": null,
+   "paperId": "78d5c8da9d739b8132332b06417fdf1224835a3c",
+   "title": "Language Models as AI Research World Models",
+   "url": "https://arxiv.org/abs/2610.12235"
   }
  },
  "seed_cache": {},
@@ -303,6 +309,10 @@
   "76dd1d57a6c0412694b7ea6d071a83cb5cf0724c": {
    "date": "2026-10-22",
    "title": "Mental-Models for Multi-Agent Systems"
+  },
+  "78d5c8da9d739b8132332b06417fdf1224835a3c": {
+   "date": "2026-10-30",
+   "title": "Language Models as AI Research World Models"
   },
   "7ea00fe69b7c77a3ad6bda017bdecfa2cd036227": {
    "date": "2026-10-21",
