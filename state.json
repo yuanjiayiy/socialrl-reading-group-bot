@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-10-30",
+ "last_daily": "2026-10-31",
  "last_seen_ts": "1793408393.386109",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -274,6 +274,12 @@
    "paperId": "78d5c8da9d739b8132332b06417fdf1224835a3c",
    "title": "Language Models as AI Research World Models",
    "url": "https://arxiv.org/abs/2610.12235"
+  },
+  "1793475557.341799": {
+   "feedback": null,
+   "paperId": "17c3e8f165136c6567038026f73bd77ec36525c2",
+   "title": "UnifiedPlayers: Enhance Tool-Integrated Reasoning in Agentic Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2609.20089"
   }
  },
  "seed_cache": {},
@@ -281,6 +287,10 @@
   "024e959e1c4d8d4730a3f92d405a2e787a7b8181": {
    "date": "2026-10-28",
    "title": "Scaling Inference-Time Compute with Teams of Coding Agents"
+  },
+  "17c3e8f165136c6567038026f73bd77ec36525c2": {
+   "date": "2026-10-31",
+   "title": "UnifiedPlayers: Enhance Tool-Integrated Reasoning in Agentic Reinforcement Learning"
   },
   "189d26f30a4d3957d358f13ccc026bd2bf340164": {
    "date": "2026-10-29",
