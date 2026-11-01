@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-10-31",
+ "last_daily": "2026-11-01",
  "last_seen_ts": "1793511843.958219",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -280,6 +280,12 @@
    "paperId": "17c3e8f165136c6567038026f73bd77ec36525c2",
    "title": "UnifiedPlayers: Enhance Tool-Integrated Reasoning in Agentic Reinforcement Learning",
    "url": "https://arxiv.org/abs/2609.20089"
+  },
+  "1793563160.346679": {
+   "feedback": null,
+   "paperId": "bce187ccf6ade3cb2ae9ff2919324ef383ead642",
+   "title": "CoTrace: Data Recipes for Training Terminal Agents with Harness-Model Co-Evolution",
+   "url": "https://arxiv.org/abs/2610.10426"
   }
  },
  "seed_cache": {},
@@ -347,6 +353,10 @@
   "ad4e73a612e1d0ada569dbca06c51332fb8803ec": {
    "date": "2026-10-20",
    "title": "Language Models Learn to Improve Language Models"
+  },
+  "bce187ccf6ade3cb2ae9ff2919324ef383ead642": {
+   "date": "2026-11-01",
+   "title": "CoTrace: Data Recipes for Training Terminal Agents with Harness-Model Co-Evolution"
   },
   "c087faadad41a881e8f87ef10249b9f66ff7566b": {
    "date": "2026-10-16",
