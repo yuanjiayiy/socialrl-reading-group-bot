@@ -2,7 +2,7 @@
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
  "last_daily": "2026-11-01",
- "last_seen_ts": "1793563160.346679",
+ "last_seen_ts": "1793643672.006199",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -86,6 +86,11 @@
    "source": "reaction",
    "title": "Harness^2: Recursive Agent Harnessing for an Open World"
   },
+  "78d5c8da9d739b8132332b06417fdf1224835a3c": {
+   "added": "2026-11-02T11:13:35.059052-08:00",
+   "source": "reaction",
+   "title": "Language Models as AI Research World Models"
+  },
   "9d9188d723751f13f86cf701d2e5551f0f73793c": {
    "added": "2026-10-22T16:03:35.858303-07:00",
    "source": "reaction",
@@ -97,6 +102,11 @@
    "added": "2026-10-15T16:38:49.766635-07:00",
    "source": "shared",
    "title": "Scaling Discovery Requires Forgetting"
+  },
+  "1639722492ef3f5ecb792f60ecbcc609edc7086b": {
+   "added": "2026-11-02T11:13:29.149690-08:00",
+   "source": "shared",
+   "title": "Evolving Agent Teams"
   },
   "5ee15c1568740433334dda8d0371bea8285d8fd3": {
    "added": "2026-10-22T16:03:35.171086-07:00",
@@ -123,6 +133,11 @@
    "source": "shared",
    "title": "Self-Evolving Coding Agents via Harness-Policy Optimization"
   },
+  "7aa0d0243781e629a55fe88f125d591240e9501e": {
+   "added": "2026-11-02T11:13:31.038921-08:00",
+   "source": "shared",
+   "title": "Stronger artificial intelligence breakthroughs hasten their own exhaustion"
+  },
   "800f766c45b8b529a70f5d05dcc6871eeda26cdb": {
    "added": "2026-10-15T16:38:47.854336-07:00",
    "source": "shared",
@@ -142,6 +157,16 @@
    "added": "2026-10-26T17:43:43.230644-07:00",
    "source": "shared",
    "title": "Context Language Models"
+  },
+  "d1b8d3f825cda293f9d4fb9ae462696354f67d08": {
+   "added": "2026-11-02T11:13:27.038751-08:00",
+   "source": "shared",
+   "title": "Rethinking Neural Thickets Without Weight Perturbations"
+  },
+  "e2d4c9588673e95af3374aaccd779bffb3e0624a": {
+   "added": "2026-11-02T11:13:32.837413-08:00",
+   "source": "shared",
+   "title": "The Scientific Contribution Graph: Automated Literature-based Technological Roadmapping at Scale"
   },
   "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
    "added": "2026-10-15T15:38:13.814299-07:00",
@@ -270,7 +295,7 @@
    "url": "https://arxiv.org/abs/2610.36469"
   },
   "1793391458.141659": {
-   "feedback": null,
+   "feedback": "down",
    "paperId": "78d5c8da9d739b8132332b06417fdf1224835a3c",
    "title": "Language Models as AI Research World Models",
    "url": "https://arxiv.org/abs/2610.12235"
