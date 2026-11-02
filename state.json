@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-11-01",
- "last_seen_ts": "1793648092.503199",
+ "last_daily": "2026-11-02",
+ "last_seen_ts": "1793661037.907589",
  "lookup": {
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
   "2506.15799": "85ba08c7fbc43032704a25ee00f07363dacf27da",
@@ -20,6 +20,7 @@
   "2603.28052": "64cd8a551607d5d004e37bb0c6cbd6d65241fbfb",
   "2605.03546": "ec1164d27c75aca0bf32180d14bf6a6a81728c58",
   "2605.11388": "2de828cb397a71d954e5da54bed6459a557e678b",
+  "2605.15011": "e2d4c9588673e95af3374aaccd779bffb3e0624a",
   "2605.16902": "23a3f53e98b4dc86ddc065243d5018932ea72b6f",
   "2605.30621": "c5c1607d44b3a08187367a1a77fee0effb8307db",
   "2608.03958": "c21f6e739c592f3db055febdd18b6743652c4a4b",
@@ -33,6 +34,9 @@
   "2610.16523": "93793a4dc01dfc67b76b2ece03d4e06648631ffd",
   "2610.20563": "13a10f229219d951c36725cb10385730167b601f",
   "2610.22791": "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9",
+  "2610.27296": "7aa0d0243781e629a55fe88f125d591240e9501e",
+  "2610.36848": "1639722492ef3f5ecb792f60ecbcc609edc7086b",
+  "2610.40649": "d1b8d3f825cda293f9d4fb9ae462696354f67d08",
   "artificial generational intelligence cultural accumulation in reinforcement learning": "7c5f045a64dbc7340b842d89e1c2817c50676046",
   "biomnibench process level evaluation of llm agents for real world biomedical research biorxiv": "f374b9b3ea2f834ccb52485707398ebb5b497198",
   "blog post autodata an automatic data scientist to create high quality data": null,
@@ -311,6 +315,12 @@
    "paperId": "bce187ccf6ade3cb2ae9ff2919324ef383ead642",
    "title": "CoTrace: Data Recipes for Training Terminal Agents with Harness-Model Co-Evolution",
    "url": "https://arxiv.org/abs/2610.10426"
+  },
+  "1793661395.115179": {
+   "feedback": null,
+   "paperId": "53d8acad3b1caa80af2b6b953212b7ff99dadc04",
+   "title": "Training Reasoning Models to Generate Diverse Scientific Ideas",
+   "url": "https://arxiv.org/abs/2610.22324"
   }
  },
  "seed_cache": {},
@@ -330,6 +340,10 @@
   "414d2dd730575c18d98150a84fdb64655b6a0110": {
    "date": "2026-10-15",
    "title": "CAST: Critique-Aware Supervision for Training Reliable Long-Horizon Tool-Calling Agents"
+  },
+  "53d8acad3b1caa80af2b6b953212b7ff99dadc04": {
+   "date": "2026-11-02",
+   "title": "Training Reasoning Models to Generate Diverse Scientific Ideas"
   },
   "5ee15c1568740433334dda8d0371bea8285d8fd3": {
    "date": "2026-10-19",
