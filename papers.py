@@ -248,9 +248,13 @@ def resolve(text: str, allow_any_url: bool = False) -> dict | None:
                     rec["abstract"] = a["abstract"]
         if rec:
             return rec
-    if url and (allow_any_url or PAPER_HOSTS.match(url)):
+    is_paper_url = bool(url and PAPER_HOSTS.match(url))
+    if url and (allow_any_url or is_paper_url):
         m = page_meta(url)
         if m.get("title"):
+            if allow_any_url and not is_paper_url:
+                return {"paperId": None, "arxiv": None, "title": m["title"], "abstract": m.get("abstract", ""),
+                        "authors": [], "year": None, "venue": "", "url": url}
             found = s2_title(m["title"])
             rec = to_record(found, url) if found else None
             if rec:
