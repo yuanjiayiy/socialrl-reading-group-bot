@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
- "last_daily": "2026-11-03",
+ "last_daily": "2026-11-04",
  "last_seen_ts": "1793741765.277719",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -358,6 +358,12 @@
    "paperId": "4525115dd8208d729f61ce1eb30747fbc570a293",
    "title": "Gacha Decoding: Eliciting Diverse Generations Through Instruction Following",
    "url": "https://arxiv.org/abs/2610.01382"
+  },
+  "1793828357.579599": {
+   "feedback": null,
+   "paperId": "c7d2e20c676b7a5fd2d1f2c24ae115fb191e2315",
+   "title": "SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2610.11345"
   }
  },
  "seed_cache": {},
@@ -441,6 +447,10 @@
   "c087faadad41a881e8f87ef10249b9f66ff7566b": {
    "date": "2026-10-16",
    "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL"
+  },
+  "c7d2e20c676b7a5fd2d1f2c24ae115fb191e2315": {
+   "date": "2026-11-04",
+   "title": "SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning"
   },
   "d8cbe50004fa5f711269d0c67de0fa926e78723a": {
    "date": "2026-10-18",
