@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 25]]",
  "force_daily": false,
- "last_daily": "2026-11-04",
- "last_seen_ts": "1793829866.794529",
+ "last_daily": "2026-11-05",
+ "last_seen_ts": "1793904301.310879",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -369,6 +369,12 @@
    "paperId": "c7d2e20c676b7a5fd2d1f2c24ae115fb191e2315",
    "title": "SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning",
    "url": "https://arxiv.org/abs/2610.11345"
+  },
+  "1793914985.842009": {
+   "feedback": null,
+   "paperId": "7cee769da204998f0dfaf28fc88c27f6d5bac90e",
+   "title": "Consolidating Reasoning with Test-Time Training",
+   "url": "https://arxiv.org/abs/2611.02104"
   }
  },
  "seed_cache": {},
@@ -420,6 +426,10 @@
   "78d5c8da9d739b8132332b06417fdf1224835a3c": {
    "date": "2026-10-30",
    "title": "Language Models as AI Research World Models"
+  },
+  "7cee769da204998f0dfaf28fc88c27f6d5bac90e": {
+   "date": "2026-11-05",
+   "title": "Consolidating Reasoning with Test-Time Training"
   },
   "7ea00fe69b7c77a3ad6bda017bdecfa2cd036227": {
    "date": "2026-10-21",
