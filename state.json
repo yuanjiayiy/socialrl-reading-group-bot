@@ -2,7 +2,7 @@
  "collapse_sig": "[[18, 24]]",
  "force_daily": false,
  "last_daily": "2026-11-04",
- "last_seen_ts": "1793741765.277719",
+ "last_seen_ts": "1793829866.794529",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -121,6 +121,11 @@
    "added": "2026-11-02T11:13:29.149690-08:00",
    "source": "shared",
    "title": "Evolving Agent Teams"
+  },
+  "4525115dd8208d729f61ce1eb30747fbc570a293": {
+   "added": "2026-11-04T16:18:02.154925-08:00",
+   "source": "reaction",
+   "title": "Gacha Decoding: Eliciting Diverse Generations Through Instruction Following"
   },
   "4e2a11da5d25938b701d3b23492e5e68a5640462": {
    "added": "2026-11-02T18:35:20.976904-08:00",
@@ -354,7 +359,7 @@
    "url": "https://arxiv.org/abs/2610.22324"
   },
   "1793740997.913289": {
-   "feedback": null,
+   "feedback": "up",
    "paperId": "4525115dd8208d729f61ce1eb30747fbc570a293",
    "title": "Gacha Decoding: Eliciting Diverse Generations Through Instruction Following",
    "url": "https://arxiv.org/abs/2610.01382"
