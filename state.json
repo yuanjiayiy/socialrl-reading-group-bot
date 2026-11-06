@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 25]]",
  "force_daily": false,
- "last_daily": "2026-11-05",
+ "last_daily": "2026-11-06",
  "last_seen_ts": "1793914985.842009",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -375,6 +375,12 @@
    "paperId": "7cee769da204998f0dfaf28fc88c27f6d5bac90e",
    "title": "Consolidating Reasoning with Test-Time Training",
    "url": "https://arxiv.org/abs/2611.02104"
+  },
+  "1793999463.965129": {
+   "feedback": null,
+   "paperId": "cc750276eb2a0960f5dc8245c151f2216bbbb29b",
+   "title": "Decoupling Exploration from Optimization in RLVR",
+   "url": "https://arxiv.org/abs/2610.10536"
   }
  },
  "seed_cache": {},
@@ -466,6 +472,10 @@
   "c7d2e20c676b7a5fd2d1f2c24ae115fb191e2315": {
    "date": "2026-11-04",
    "title": "SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning"
+  },
+  "cc750276eb2a0960f5dc8245c151f2216bbbb29b": {
+   "date": "2026-11-06",
+   "title": "Decoupling Exploration from Optimization in RLVR"
   },
   "d8cbe50004fa5f711269d0c67de0fa926e78723a": {
    "date": "2026-10-18",
