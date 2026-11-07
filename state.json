@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 25]]",
  "force_daily": false,
- "last_daily": "2026-11-06",
+ "last_daily": "2026-11-07",
  "last_seen_ts": "1793999463.965129",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -381,6 +381,12 @@
    "paperId": "cc750276eb2a0960f5dc8245c151f2216bbbb29b",
    "title": "Decoupling Exploration from Optimization in RLVR",
    "url": "https://arxiv.org/abs/2610.10536"
+  },
+  "1794080736.785509": {
+   "feedback": null,
+   "paperId": "f3e649265795f12370ec38579f0656d42aa5574f",
+   "title": "ReAPO: Retry-Aware Policy Optimization for Efficient Exploration in LLM Reasoning",
+   "url": "https://arxiv.org/abs/2610.28770"
   }
  },
  "seed_cache": {},
@@ -488,6 +494,10 @@
   "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
    "date": "2026-10-15",
    "title": "Harness Learning Enables Generalizable Test-Time Adaptation"
+  },
+  "f3e649265795f12370ec38579f0656d42aa5574f": {
+   "date": "2026-11-07",
+   "title": "ReAPO: Retry-Aware Policy Optimization for Efficient Exploration in LLM Reasoning"
   }
  }
 }
