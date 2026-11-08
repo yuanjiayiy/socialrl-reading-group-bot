@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 25]]",
  "force_daily": false,
- "last_daily": "2026-11-07",
+ "last_daily": "2026-11-08",
  "last_seen_ts": "1794080736.785509",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -387,6 +387,12 @@
    "paperId": "f3e649265795f12370ec38579f0656d42aa5574f",
    "title": "ReAPO: Retry-Aware Policy Optimization for Efficient Exploration in LLM Reasoning",
    "url": "https://arxiv.org/abs/2610.28770"
+  },
+  "1794168256.360579": {
+   "feedback": null,
+   "paperId": "b438ddbe85c529f47b48632dc17402d15d8fb9a1",
+   "title": "Recursive Reward Improvement via Adversarial Meta-Prompt Evolution",
+   "url": "https://arxiv.org/abs/2610.21040"
   }
  },
  "seed_cache": {},
@@ -466,6 +472,10 @@
   "ad4e73a612e1d0ada569dbca06c51332fb8803ec": {
    "date": "2026-10-20",
    "title": "Language Models Learn to Improve Language Models"
+  },
+  "b438ddbe85c529f47b48632dc17402d15d8fb9a1": {
+   "date": "2026-11-08",
+   "title": "Recursive Reward Improvement via Adversarial Meta-Prompt Evolution"
   },
   "bce187ccf6ade3cb2ae9ff2919324ef383ead642": {
    "date": "2026-11-01",
