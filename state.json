@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 25]]",
  "force_daily": false,
- "last_daily": "2026-11-08",
- "last_seen_ts": "1794251017.524549",
+ "last_daily": "2026-11-09",
+ "last_seen_ts": "1794262741.293369",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -26,6 +26,7 @@
   "2605.15011": "e2d4c9588673e95af3374aaccd779bffb3e0624a",
   "2605.15458": "147d4f552db32880f6cecdc046c2b8d8ccffa6f5",
   "2605.16902": "23a3f53e98b4dc86ddc065243d5018932ea72b6f",
+  "2605.20355": "00fca1807384d23b779898ef03f9ad5e7c45412a",
   "2605.30621": "c5c1607d44b3a08187367a1a77fee0effb8307db",
   "2608.03958": "c21f6e739c592f3db055febdd18b6743652c4a4b",
   "2608.17253": "c087faadad41a881e8f87ef10249b9f66ff7566b",
@@ -398,6 +399,12 @@
    "paperId": "b438ddbe85c529f47b48632dc17402d15d8fb9a1",
    "title": "Recursive Reward Improvement via Adversarial Meta-Prompt Evolution",
    "url": "https://arxiv.org/abs/2610.21040"
+  },
+  "1794268524.085299": {
+   "feedback": null,
+   "paperId": "8c48c932a6f86513e2b4546adf2b64e9b405479b",
+   "title": "Explorer-Zero: Improving Self-Play for Long-Horizon Tasks with Decomposable Verifiable Rewards",
+   "url": "https://arxiv.org/abs/2610.19868"
   }
  },
  "seed_cache": {},
@@ -461,6 +468,10 @@
   "841f443dac56670fa35476efb912a2f67709fafa": {
    "date": "2026-10-23",
    "title": "LiteEvo: Automated, Cost-Efficient Harness Evolution for Generalization to Unseen Tasks"
+  },
+  "8c48c932a6f86513e2b4546adf2b64e9b405479b": {
+   "date": "2026-11-09",
+   "title": "Explorer-Zero: Improving Self-Play for Long-Horizon Tasks with Decomposable Verifiable Rewards"
   },
   "91398e34244b35c5bd34461607ca67801241256f": {
    "date": "2026-10-26",
