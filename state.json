@@ -2,7 +2,7 @@
  "collapse_sig": "[[18, 25]]",
  "force_daily": false,
  "last_daily": "2026-11-08",
- "last_seen_ts": "1794168256.360579",
+ "last_seen_ts": "1794233443.399259",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -107,6 +107,11 @@
   }
  },
  "positives": {
+  "00fca1807384d23b779898ef03f9ad5e7c45412a": {
+   "added": "2026-11-09T11:01:21.362547-08:00",
+   "source": "shared",
+   "title": "Proximal State Nudging: Reducing Skill Atrophy from AI Assistance"
+  },
   "13a10f229219d951c36725cb10385730167b601f": {
    "added": "2026-10-15T16:38:49.766635-07:00",
    "source": "shared",
