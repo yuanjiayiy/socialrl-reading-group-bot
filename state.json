@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 25]]",
  "force_daily": false,
- "last_daily": "2026-11-10",
+ "last_daily": "2026-11-11",
  "last_seen_ts": "1794346581.181529",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -411,6 +411,12 @@
    "paperId": "7749a2067b3c329197b2750ab1172856821658a6",
    "title": "Planned Test-Time Scaling with Coordinated Reasoning Paths",
    "url": "https://arxiv.org/abs/2609.27374"
+  },
+  "1794435800.458409": {
+   "feedback": null,
+   "paperId": "119650c978ea6c722fda2b2b0a75c3959de24102",
+   "title": "STRETCH the Boundaries: A Unified Self-Taught Framework for Progressive LLM Evolution",
+   "url": "https://arxiv.org/abs/2609.18642"
   }
  },
  "seed_cache": {},
@@ -418,6 +424,10 @@
   "024e959e1c4d8d4730a3f92d405a2e787a7b8181": {
    "date": "2026-10-28",
    "title": "Scaling Inference-Time Compute with Teams of Coding Agents"
+  },
+  "119650c978ea6c722fda2b2b0a75c3959de24102": {
+   "date": "2026-11-11",
+   "title": "STRETCH the Boundaries: A Unified Self-Taught Framework for Progressive LLM Evolution"
   },
   "17c3e8f165136c6567038026f73bd77ec36525c2": {
    "date": "2026-10-31",
