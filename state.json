@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 25]]",
  "force_daily": false,
- "last_daily": "2026-11-11",
- "last_seen_ts": "1794435800.458409",
+ "last_daily": "2026-11-12",
+ "last_seen_ts": "1794509101.531359",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -417,6 +417,12 @@
    "paperId": "119650c978ea6c722fda2b2b0a75c3959de24102",
    "title": "STRETCH the Boundaries: A Unified Self-Taught Framework for Progressive LLM Evolution",
    "url": "https://arxiv.org/abs/2609.18642"
+  },
+  "1794520757.901609": {
+   "feedback": null,
+   "paperId": "6d7793d9668e5f5cb90f3fd6d9572566f7bc1975",
+   "title": "Training Advisors for LLM Agents from Task Outcomes",
+   "url": "https://arxiv.org/abs/2610.09858"
   }
  },
  "seed_cache": {},
@@ -460,6 +466,10 @@
   "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9": {
    "date": "2026-10-22",
    "title": "Self-Evolving Coding Agents via Harness-Policy Optimization"
+  },
+  "6d7793d9668e5f5cb90f3fd6d9572566f7bc1975": {
+   "date": "2026-11-12",
+   "title": "Training Advisors for LLM Agents from Task Outcomes"
   },
   "6fac819b95eb96e9bf74c44e8fe102e48b084d73": {
    "date": "2026-10-25",
