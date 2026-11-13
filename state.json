@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 27]]",
  "force_daily": false,
- "last_daily": "2026-11-12",
+ "last_daily": "2026-11-13",
  "last_seen_ts": "1794520757.901609",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -423,6 +423,12 @@
    "paperId": "6d7793d9668e5f5cb90f3fd6d9572566f7bc1975",
    "title": "Training Advisors for LLM Agents from Task Outcomes",
    "url": "https://arxiv.org/abs/2610.09858"
+  },
+  "1794606307.640229": {
+   "feedback": null,
+   "paperId": "e71af5b6f7f8032ff8ec3d728474904438a7ec6c",
+   "title": "Self-Evolving Visual Agent via Margin Reward",
+   "url": "https://arxiv.org/abs/2610.15084"
   }
  },
  "seed_cache": {},
@@ -546,6 +552,10 @@
   "e27ae00aade4a6ed0c94b4a8c0ed169ae2006603": {
    "date": "2026-10-27",
    "title": "FreeEvolve: Learning to Evolve Beyond Fixed Loops"
+  },
+  "e71af5b6f7f8032ff8ec3d728474904438a7ec6c": {
+   "date": "2026-11-13",
+   "title": "Self-Evolving Visual Agent via Margin Reward"
   },
   "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
    "date": "2026-10-15",
