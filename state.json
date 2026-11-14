@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 27]]",
  "force_daily": false,
- "last_daily": "2026-11-13",
+ "last_daily": "2026-11-14",
  "last_seen_ts": "1794606307.640229",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -429,6 +429,12 @@
    "paperId": "e71af5b6f7f8032ff8ec3d728474904438a7ec6c",
    "title": "Self-Evolving Visual Agent via Margin Reward",
    "url": "https://arxiv.org/abs/2610.15084"
+  },
+  "1794687348.474999": {
+   "feedback": null,
+   "paperId": "ec01ac02db46d086e772fbbf7edbee3bc898e966",
+   "title": "Guided-RLVR: Guided Exploration in Reinforcement Learning with Verifiable Rewards",
+   "url": "https://arxiv.org/abs/2610.37041"
   }
  },
  "seed_cache": {},
@@ -560,6 +566,10 @@
   "e8cc23cd882f0bd5c16ba85742a459134ae33b73": {
    "date": "2026-10-15",
    "title": "Harness Learning Enables Generalizable Test-Time Adaptation"
+  },
+  "ec01ac02db46d086e772fbbf7edbee3bc898e966": {
+   "date": "2026-11-14",
+   "title": "Guided-RLVR: Guided Exploration in Reinforcement Learning with Verifiable Rewards"
   },
   "f3e649265795f12370ec38579f0656d42aa5574f": {
    "date": "2026-11-07",
