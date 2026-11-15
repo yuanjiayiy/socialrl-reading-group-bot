@@ -105,6 +105,11 @@
    "added": "2026-10-22T16:03:35.858303-07:00",
    "source": "reaction",
    "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning"
+  },
+  "ec01ac02db46d086e772fbbf7edbee3bc898e966": {
+   "added": "2026-11-14T16:11:08.458130-08:00",
+   "source": "reaction",
+   "title": "Guided-RLVR: Guided Exploration in Reinforcement Learning with Verifiable Rewards"
   }
  },
  "positives": {
@@ -431,7 +436,7 @@
    "url": "https://arxiv.org/abs/2610.15084"
   },
   "1794687348.474999": {
-   "feedback": null,
+   "feedback": "down",
    "paperId": "ec01ac02db46d086e772fbbf7edbee3bc898e966",
    "title": "Guided-RLVR: Guided Exploration in Reinforcement Learning with Verifiable Rewards",
    "url": "https://arxiv.org/abs/2610.37041"
