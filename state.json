@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 27]]",
  "force_daily": false,
- "last_daily": "2026-11-14",
+ "last_daily": "2026-11-15",
  "last_seen_ts": "1794687348.474999",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -440,6 +440,12 @@
    "paperId": "ec01ac02db46d086e772fbbf7edbee3bc898e966",
    "title": "Guided-RLVR: Guided Exploration in Reinforcement Learning with Verifiable Rewards",
    "url": "https://arxiv.org/abs/2610.37041"
+  },
+  "1794775243.949129": {
+   "feedback": null,
+   "paperId": "e5dded319b8ee5acb89bfc3ca042ee5e6b49759c",
+   "title": "Knowledge in the Harness, Reliability in the Weights: Teacher-Free Co-Evolution of an LLM Agent",
+   "url": "https://arxiv.org/abs/2611.15268"
   }
  },
  "seed_cache": {},
@@ -563,6 +569,10 @@
   "e27ae00aade4a6ed0c94b4a8c0ed169ae2006603": {
    "date": "2026-10-27",
    "title": "FreeEvolve: Learning to Evolve Beyond Fixed Loops"
+  },
+  "e5dded319b8ee5acb89bfc3ca042ee5e6b49759c": {
+   "date": "2026-11-15",
+   "title": "Knowledge in the Harness, Reliability in the Weights: Teacher-Free Co-Evolution of an LLM Agent"
   },
   "e71af5b6f7f8032ff8ec3d728474904438a7ec6c": {
    "date": "2026-11-13",
