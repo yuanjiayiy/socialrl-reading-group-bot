@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 27]]",
  "force_daily": false,
- "last_daily": "2026-11-15",
- "last_seen_ts": "1794775243.949129",
+ "last_daily": "2026-11-16",
+ "last_seen_ts": "1794870652.229859",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -446,6 +446,12 @@
    "paperId": "e5dded319b8ee5acb89bfc3ca042ee5e6b49759c",
    "title": "Knowledge in the Harness, Reliability in the Weights: Teacher-Free Co-Evolution of an LLM Agent",
    "url": "https://arxiv.org/abs/2611.15268"
+  },
+  "1794873348.489589": {
+   "feedback": null,
+   "paperId": "16c5ae5dbb26b86c5ee1c338926ac8001fbd190f",
+   "title": "Athanor: An Agent-Native System for Autonomous Post-Training Research",
+   "url": "https://arxiv.org/abs/2610.21055"
   }
  },
  "seed_cache": {},
@@ -457,6 +463,10 @@
   "119650c978ea6c722fda2b2b0a75c3959de24102": {
    "date": "2026-11-11",
    "title": "STRETCH the Boundaries: A Unified Self-Taught Framework for Progressive LLM Evolution"
+  },
+  "16c5ae5dbb26b86c5ee1c338926ac8001fbd190f": {
+   "date": "2026-11-16",
+   "title": "Athanor: An Agent-Native System for Autonomous Post-Training Research"
   },
   "17c3e8f165136c6567038026f73bd77ec36525c2": {
    "date": "2026-10-31",
