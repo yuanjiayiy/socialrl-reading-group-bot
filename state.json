@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 27]]",
  "force_daily": false,
- "last_daily": "2026-11-16",
- "last_seen_ts": "1794873348.489589",
+ "last_daily": "2026-11-17",
+ "last_seen_ts": "1794945233.328259",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -43,6 +43,7 @@
   "2610.27296": "7aa0d0243781e629a55fe88f125d591240e9501e",
   "2610.36848": "1639722492ef3f5ecb792f60ecbcc609edc7086b",
   "2610.40649": "d1b8d3f825cda293f9d4fb9ae462696354f67d08",
+  "a multi agent system for automating scientific discovery": "ddaac3c134274b3f40f8bcbad705d80b00af3198",
   "artificial generational intelligence cultural accumulation in reinforcement learning": "7c5f045a64dbc7340b842d89e1c2817c50676046",
   "biomnibench process level evaluation of llm agents for real world biomedical research biorxiv": "f374b9b3ea2f834ccb52485707398ebb5b497198",
   "blog post autodata an automatic data scientist to create high quality data": null,
@@ -212,6 +213,11 @@
    "added": "2026-11-02T11:13:27.038751-08:00",
    "source": "shared",
    "title": "Rethinking Neural Thickets Without Weight Perturbations"
+  },
+  "ddaac3c134274b3f40f8bcbad705d80b00af3198": {
+   "added": "2026-11-17T15:15:10.345586-08:00",
+   "source": "shared",
+   "title": "A multi-agent system for automating scientific discovery"
   },
   "e2d4c9588673e95af3374aaccd779bffb3e0624a": {
    "added": "2026-11-02T11:13:32.837413-08:00",
@@ -452,6 +458,12 @@
    "paperId": "16c5ae5dbb26b86c5ee1c338926ac8001fbd190f",
    "title": "Athanor: An Agent-Native System for Autonomous Post-Training Research",
    "url": "https://arxiv.org/abs/2610.21055"
+  },
+  "1794957359.033039": {
+   "feedback": null,
+   "paperId": "f55d7bbbefc318ff2cd83c8ef3e02eeb8ad0adfe",
+   "title": "AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning",
+   "url": "https://arxiv.org/abs/2610.22194"
   }
  },
  "seed_cache": {},
@@ -599,6 +611,10 @@
   "f3e649265795f12370ec38579f0656d42aa5574f": {
    "date": "2026-11-07",
    "title": "ReAPO: Retry-Aware Policy Optimization for Efficient Exploration in LLM Reasoning"
+  },
+  "f55d7bbbefc318ff2cd83c8ef3e02eeb8ad0adfe": {
+   "date": "2026-11-17",
+   "title": "AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning"
   }
  }
 }
