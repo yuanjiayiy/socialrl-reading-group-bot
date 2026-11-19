@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 28]]",
  "force_daily": false,
- "last_daily": "2026-11-18",
- "last_seen_ts": "1795056857.534059",
+ "last_daily": "2026-11-19",
+ "last_seen_ts": "1795113900.801739",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -470,6 +470,12 @@
    "paperId": "ed8c01bb1548f89bafa166cb49aa188d344a9d64",
    "title": "Tev: Scaling Long-Horizon Agentic Environments with Dense Progress Rewards",
    "url": "https://arxiv.org/abs/2610.18868"
+  },
+  "1795128686.536279": {
+   "feedback": null,
+   "paperId": "ff40d59d42a159729e3e37de5bdefbc4684832b6",
+   "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
+   "url": "https://arxiv.org/abs/2611.23068"
   }
  },
  "seed_cache": {},
@@ -625,6 +631,10 @@
   "f55d7bbbefc318ff2cd83c8ef3e02eeb8ad0adfe": {
    "date": "2026-11-17",
    "title": "AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning"
+  },
+  "ff40d59d42a159729e3e37de5bdefbc4684832b6": {
+   "date": "2026-11-19",
+   "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements"
   }
  }
 }
