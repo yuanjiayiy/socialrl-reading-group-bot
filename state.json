@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 32]]",
  "force_daily": false,
- "last_daily": "2026-11-19",
+ "last_daily": "2026-11-20",
  "last_seen_ts": "1795128686.536279",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -476,6 +476,12 @@
    "paperId": "ff40d59d42a159729e3e37de5bdefbc4684832b6",
    "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
    "url": "https://arxiv.org/abs/2611.23068"
+  },
+  "1795213655.975499": {
+   "feedback": null,
+   "paperId": "b15c46d4dc81af7754abf27ee97371fe9010faac",
+   "title": "Traverse: Learning When to Remember, Reset, and Redirect for Long-Horizon Web Search",
+   "url": "https://arxiv.org/abs/2609.37082"
   }
  },
  "seed_cache": {},
@@ -575,6 +581,10 @@
   "ad4e73a612e1d0ada569dbca06c51332fb8803ec": {
    "date": "2026-10-20",
    "title": "Language Models Learn to Improve Language Models"
+  },
+  "b15c46d4dc81af7754abf27ee97371fe9010faac": {
+   "date": "2026-11-20",
+   "title": "Traverse: Learning When to Remember, Reset, and Redirect for Long-Horizon Web Search"
   },
   "b438ddbe85c529f47b48632dc17402d15d8fb9a1": {
    "date": "2026-11-08",
