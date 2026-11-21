@@ -2,7 +2,7 @@
  "collapse_sig": "[[18, 32]]",
  "force_daily": false,
  "last_daily": "2026-11-21",
- "last_seen_ts": "1795213655.975499",
+ "last_seen_ts": "1795296141.250209",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -106,6 +106,11 @@
    "added": "2026-10-22T16:03:35.858303-07:00",
    "source": "reaction",
    "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning"
+  },
+  "eb79ec13990ee2de47a1ee073da4193f8b3409e2": {
+   "added": "2026-11-21T15:45:21.696497-08:00",
+   "source": "reaction",
+   "title": "Multi-LLM Collaborative Alignment via Stackelberg Games"
   },
   "ec01ac02db46d086e772fbbf7edbee3bc898e966": {
    "added": "2026-11-14T16:11:08.458130-08:00",
@@ -484,7 +489,7 @@
    "url": "https://arxiv.org/abs/2609.37082"
   },
   "1795296141.250209": {
-   "feedback": null,
+   "feedback": "down",
    "paperId": "eb79ec13990ee2de47a1ee073da4193f8b3409e2",
    "title": "Multi-LLM Collaborative Alignment via Stackelberg Games",
    "url": "https://arxiv.org/abs/2609.39076"
