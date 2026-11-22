@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 32]]",
  "force_daily": false,
- "last_daily": "2026-11-21",
+ "last_daily": "2026-11-22",
  "last_seen_ts": "1795296141.250209",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -493,6 +493,12 @@
    "paperId": "eb79ec13990ee2de47a1ee073da4193f8b3409e2",
    "title": "Multi-LLM Collaborative Alignment via Stackelberg Games",
    "url": "https://arxiv.org/abs/2609.39076"
+  },
+  "1795382750.053139": {
+   "feedback": null,
+   "paperId": "d3fade3e9904e47b04d2ebdf926532dc206dd02c",
+   "title": "Co-Evolving Acting and Forecasting for Language Agents",
+   "url": "https://arxiv.org/abs/2610.20597"
   }
  },
  "seed_cache": {},
@@ -616,6 +622,10 @@
   "cc750276eb2a0960f5dc8245c151f2216bbbb29b": {
    "date": "2026-11-06",
    "title": "Decoupling Exploration from Optimization in RLVR"
+  },
+  "d3fade3e9904e47b04d2ebdf926532dc206dd02c": {
+   "date": "2026-11-22",
+   "title": "Co-Evolving Acting and Forecasting for Language Agents"
   },
   "d8cbe50004fa5f711269d0c67de0fa926e78723a": {
    "date": "2026-10-18",
