@@ -1,8 +1,8 @@
 {
  "collapse_sig": "[[18, 33]]",
  "force_daily": false,
- "last_daily": "2026-11-22",
- "last_seen_ts": "1795382750.053139",
+ "last_daily": "2026-11-23",
+ "last_seen_ts": "1795479744.255259",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
   "2405.07987": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
@@ -43,6 +43,7 @@
   "2610.27296": "7aa0d0243781e629a55fe88f125d591240e9501e",
   "2610.36848": "1639722492ef3f5ecb792f60ecbcc609edc7086b",
   "2610.40649": "d1b8d3f825cda293f9d4fb9ae462696354f67d08",
+  "2611.11725": "cd2a2e81ab5b86ee61e57890f0edd57f98bfd4a7",
   "a multi agent system for automating scientific discovery": "ddaac3c134274b3f40f8bcbad705d80b00af3198",
   "artificial generational intelligence cultural accumulation in reinforcement learning": "7c5f045a64dbc7340b842d89e1c2817c50676046",
   "biomnibench process level evaluation of llm agents for real world biomedical research biorxiv": "f374b9b3ea2f834ccb52485707398ebb5b497198",
@@ -213,6 +214,11 @@
    "added": "2026-11-02T18:35:22.719627-08:00",
    "source": "shared",
    "title": "What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study"
+  },
+  "cd2a2e81ab5b86ee61e57890f0edd57f98bfd4a7": {
+   "added": "2026-11-23T18:41:02.582831-08:00",
+   "source": "shared",
+   "title": "The Value of Not Knowing: How Fresh Eyes through Naive LLMs Fuel Creativity"
   },
   "d1b8d3f825cda293f9d4fb9ae462696354f67d08": {
    "added": "2026-11-02T11:13:27.038751-08:00",
@@ -499,6 +505,12 @@
    "paperId": "d3fade3e9904e47b04d2ebdf926532dc206dd02c",
    "title": "Co-Evolving Acting and Forecasting for Language Agents",
    "url": "https://arxiv.org/abs/2610.20597"
+  },
+  "1795488123.182819": {
+   "feedback": null,
+   "paperId": "eb7dc59898e4ee717481e6ef21c155eb83a68639",
+   "title": "Self-Evolving Agents through Privileged Retrospective Distillation",
+   "url": "https://arxiv.org/abs/2610.27495"
   }
  },
  "seed_cache": {},
@@ -650,6 +662,10 @@
   "eb79ec13990ee2de47a1ee073da4193f8b3409e2": {
    "date": "2026-11-21",
    "title": "Multi-LLM Collaborative Alignment via Stackelberg Games"
+  },
+  "eb7dc59898e4ee717481e6ef21c155eb83a68639": {
+   "date": "2026-11-23",
+   "title": "Self-Evolving Agents through Privileged Retrospective Distillation"
   },
   "ec01ac02db46d086e772fbbf7edbee3bc898e966": {
    "date": "2026-11-14",
