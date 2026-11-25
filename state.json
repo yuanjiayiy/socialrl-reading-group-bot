@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 36]]",
  "force_daily": false,
- "last_daily": "2026-11-24",
+ "last_daily": "2026-11-25",
  "last_seen_ts": "1795565764.529719",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -517,6 +517,12 @@
    "paperId": "63882b07cbeefccfc077485cb1cd1551d51cc085",
    "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?",
    "url": "https://arxiv.org/abs/2609.40303"
+  },
+  "1795650945.500169": {
+   "feedback": null,
+   "paperId": "af6cee120b1578f9734436bc938961dac56e2963",
+   "title": "HERA: Harness-Environment Co-Evolution for Reliable Agentic Abstention",
+   "url": "https://arxiv.org/abs/2610.06563"
   }
  },
  "seed_cache": {},
@@ -620,6 +626,10 @@
   "ad4e73a612e1d0ada569dbca06c51332fb8803ec": {
    "date": "2026-10-20",
    "title": "Language Models Learn to Improve Language Models"
+  },
+  "af6cee120b1578f9734436bc938961dac56e2963": {
+   "date": "2026-11-25",
+   "title": "HERA: Harness-Environment Co-Evolution for Reliable Agentic Abstention"
   },
   "b15c46d4dc81af7754abf27ee97371fe9010faac": {
    "date": "2026-11-20",
