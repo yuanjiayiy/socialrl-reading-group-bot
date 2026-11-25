@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 35]]",
  "force_daily": false,
- "last_daily": "2026-11-23",
+ "last_daily": "2026-11-24",
  "last_seen_ts": "1795510019.306089",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -511,6 +511,12 @@
    "paperId": "eb7dc59898e4ee717481e6ef21c155eb83a68639",
    "title": "Self-Evolving Agents through Privileged Retrospective Distillation",
    "url": "https://arxiv.org/abs/2610.27495"
+  },
+  "1795565764.529719": {
+   "feedback": null,
+   "paperId": "63882b07cbeefccfc077485cb1cd1551d51cc085",
+   "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?",
+   "url": "https://arxiv.org/abs/2609.40303"
   }
  },
  "seed_cache": {},
@@ -554,6 +560,10 @@
   "6116dcf16c15992d5439b93a4fbec5db1224ecf1": {
    "date": "2026-10-24",
    "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision"
+  },
+  "63882b07cbeefccfc077485cb1cd1551d51cc085": {
+   "date": "2026-11-24",
+   "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?"
   },
   "6940423e79360933d46ecfb5bd7dd8c2cb57c3b9": {
    "date": "2026-10-22",
