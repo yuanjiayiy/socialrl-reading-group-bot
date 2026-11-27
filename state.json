@@ -1,7 +1,7 @@
 {
  "collapse_sig": "[[18, 36]]",
  "force_daily": false,
- "last_daily": "2026-11-26",
+ "last_daily": "2026-11-27",
  "last_seen_ts": "1795738313.462479",
  "lookup": {
   "2006.05990": "cbe9be3a9731c13dd18fc7bdfaf8dcedfe7a5544",
@@ -529,6 +529,12 @@
    "paperId": "56adbd941af00d0966ff52afda49786f25ff009f",
    "title": "Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries",
    "url": "https://arxiv.org/abs/2610.06269"
+  },
+  "1795823449.183579": {
+   "feedback": null,
+   "paperId": "5411062c6113a5fe2052c8d15429b9d6f65627dc",
+   "title": "Learning What vs. Learning How: Decomposing Task and Interface Competence in Agentic Training",
+   "url": "https://arxiv.org/abs/2611.31427"
   }
  },
  "seed_cache": {},
@@ -564,6 +570,10 @@
   "53d8acad3b1caa80af2b6b953212b7ff99dadc04": {
    "date": "2026-11-02",
    "title": "Training Reasoning Models to Generate Diverse Scientific Ideas"
+  },
+  "5411062c6113a5fe2052c8d15429b9d6f65627dc": {
+   "date": "2026-11-27",
+   "title": "Learning What vs. Learning How: Decomposing Task and Interface Competence in Agentic Training"
   },
   "56adbd941af00d0966ff52afda49786f25ff009f": {
    "date": "2026-11-26",
